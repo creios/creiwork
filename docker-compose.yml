@@ -1,0 +1,9 @@
+apache:
+  build: .
+  dns:
+    - 8.8.8.8
+    - 9.9.9.9
+  ports:
+    - "80:80"
+  volumes:
+    - .:/var/www/html

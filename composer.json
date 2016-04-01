@@ -1,0 +1,30 @@
+{
+  "name": "creios/creiwork",
+  "description": "A PHP Framework build upon awesome packages",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tim Tegeler",
+      "email": "tegeler@creios.net"
+    }
+  ],
+  "config": {
+    "vendor-dir": "Framework/Vendor"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "codegyre/robo": "^0.7.1"
+  },
+  "require": {
+    "php-di/php-di": "^5.2",
+    "timtegeler/routerunner": "^0.0.9",
+    "league/plates": "^3.1",
+    "league/booboo": "^1.0",
+    "monolog/monolog": "^1.18"
+  },
+  "autoload": {
+    "psr-4": {
+      "Creios\\Creiwork\\": "Framework"
+    }
+  }
+}

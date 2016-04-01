@@ -9,7 +9,7 @@
     }
   ],
   "config": {
-    "vendor-dir": "Framework/Vendor"
+    "vendor-dir": "App/Vendor"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Creios\\Creiwork\\": "Framework"
+      "Creios\\Creiwork\\": "App"
     }
   }
 }

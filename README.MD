@@ -14,4 +14,5 @@ A PHP Framework build upon awesome packages
 - [BooBoo](https://github.com/thephpleague/booboo): A modern error handler capable of logging and formatting errors in a variety of ways
 - [Monolog](https://github.com/Seldaek/monolog): Sends your logs to files, sockets, inboxes, databases and various web services
 - [Phpunit](https://github.com/sebastianbergmann/phpunit): The PHP Unit Testing framework
-- [Robo](https://github.com/Codegyre/Robo):  Modern task runner for PHP
+- [Robo](https://github.com/Codegyre/Robo): Modern task runner for PHP
+- [Bower](https://github.com/bower/bower): A package manager for the web

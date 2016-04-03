@@ -1,6 +1,6 @@
 <?php
 
-namespace Creios\Creiwork;
+namespace Creios\Creiwork\Util;
 
 use League\BooBoo\Util;
 use League\BooBoo\Formatter\AbstractFormatter;

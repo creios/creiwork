@@ -52,8 +52,8 @@ return [
             $htmlFormatter->setErrorLimit(E_ALL);
             $runner->pushFormatter($htmlFormatter);
 
-            /** @var Creios\Creiwork\ErrorPageFormatter $errorPageFormatter */
-            $errorPageFormatter = $c->get('Creios\Creiwork\ErrorPageFormatter');
+            /** @var Creios\Creiwork\Util\ErrorPageFormatter $errorPageFormatter */
+            $errorPageFormatter = $c->get('Creios\Creiwork\Util\ErrorPageFormatter');
             $runner->setErrorPageFormatter($errorPageFormatter);
 
             $runner->register();

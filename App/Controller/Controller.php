@@ -14,7 +14,7 @@ class Controller extends BaseController
      */
     public function index()
     {
-        return $this->templates->render('index', ['name' => 'Jonathan']);
+        return $this->templates->render('index');
     }
 
 }

@@ -1,2 +1,1 @@
 GET /       Controller->index
-GET /test   Controller->test

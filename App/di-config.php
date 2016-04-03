@@ -24,7 +24,7 @@ return [
      * @return Engine
      */
         function () {
-            return new Engine('../Templates');
+            return new Engine('../Template');
         },
 
     'Monolog\Logger' =>

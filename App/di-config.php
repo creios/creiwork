@@ -36,5 +36,29 @@ return [
             $logger = new Logger('Creiwork');
             $logger->pushHandler(new StreamHandler('../test.log', Logger::INFO));
             return $logger;
+        },
+
+    'League\BooBoo\Runner' =>
+
+    /**
+     * @return \League\BooBoo\Runner
+     * @throws \League\BooBoo\Exception\NoFormattersRegisteredException
+     */
+        function (Container $c) {
+            $runner = new League\BooBoo\Runner();
+
+            /** @var League\BooBoo\Formatter\HtmlFormatter $htmlFormatter */
+            $htmlFormatter = $c->get('League\BooBoo\Formatter\HtmlFormatter');
+            $htmlFormatter->setErrorLimit(E_ALL);
+            $runner->pushFormatter($htmlFormatter);
+
+            /** @var Creios\Creiwork\ErrorPageFormatter $errorPageFormatter */
+            $errorPageFormatter = $c->get('Creios\Creiwork\ErrorPageFormatter');
+            $runner->setErrorPageFormatter($errorPageFormatter);
+
+            $runner->register();
+
+            return $runner;
         }
+
 ];

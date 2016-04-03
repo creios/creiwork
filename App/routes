@@ -1,2 +1,2 @@
-GET /       Controller->index
+GET /       Controller->index2
 GET /test   Controller->test

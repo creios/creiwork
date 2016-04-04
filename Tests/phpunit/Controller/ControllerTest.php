@@ -43,7 +43,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testTemplate(Controller $controller)
     {
-        $this->assertEquals(new TemplateResult('index', ['name' => 'tim']), $controller->template());
+        $this->assertEquals(new TemplateResult('index', []), $controller->template());
     }
 
     /**

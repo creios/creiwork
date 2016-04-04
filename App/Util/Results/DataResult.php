@@ -1,12 +1,12 @@
 <?php
 
-namespace Creios\Creiwork\Responses;
+namespace Creios\Creiwork\Util\Results;
 
 /**
- * Class DataResponse
- * @package Creios\Creiwork\Responses
+ * Class DataResult
+ * @package Creios\Creiwork\Util\Results
  */
-abstract class DataResponse extends Response
+abstract class DataResult extends Result
 {
 
     /**
@@ -15,7 +15,7 @@ abstract class DataResponse extends Response
     protected $data;
 
     /**
-     * Response constructor.
+     * Result constructor.
      * @param array $data
      */
     public function __construct(array $data)

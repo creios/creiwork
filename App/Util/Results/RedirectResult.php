@@ -1,12 +1,12 @@
 <?php
 
-namespace Creios\Creiwork\Responses;
+namespace Creios\Creiwork\Util\Results;
 
 /**
- * Class RedirectResponse
- * @package Creios\Creiwork\Responses
+ * Class RedirectResult
+ * @package Creios\Creiwork\Util\Results
  */
-class RedirectResponse extends Response
+class RedirectResult extends Result
 {
 
     /**
@@ -15,7 +15,7 @@ class RedirectResponse extends Response
     protected $url;
 
     /**
-     * RedirectResponse constructor.
+     * RedirectResult constructor.
      * @param $url
      */
     public function __construct($url)

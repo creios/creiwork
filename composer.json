@@ -20,11 +20,15 @@
     "timtegeler/routerunner": "^0.0.9",
     "league/plates": "^3.1",
     "monolog/monolog": "^1.18",
-    "filp/whoops": "^2.1"
+    "filp/whoops": "^2.1",
+    "creios/http-message": "^0.0.2"
   },
   "autoload": {
     "psr-4": {
       "Creios\\Creiwork\\": "App"
-    }
+    },
+    "files": [
+      "App/Util/functions.php"
+    ]
   }
 }

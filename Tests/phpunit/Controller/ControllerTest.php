@@ -2,9 +2,9 @@
 
 namespace Creios\Creiwork\Controller;
 
-use Creios\Creiwork\Responses\JsonResponse;
-use Creios\Creiwork\Responses\RedirectResponse;
-use Creios\Creiwork\Responses\TemplateResponse;
+use Creios\Creiwork\Util\Results\JsonResult;
+use Creios\Creiwork\Util\Results\RedirectResult;
+use Creios\Creiwork\Util\Results\TemplateResult;
 use Monolog\Logger;
 use PHPUnit_Framework_TestCase;
 
@@ -34,7 +34,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testIndex(Controller $controller)
     {
-        $this->assertEquals(new JsonResponse(['title' => 'index']), $controller->index());
+        $this->assertEquals(new JsonResult(['title' => 'index']), $controller->index());
     }
 
     /**
@@ -43,7 +43,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testTemplate(Controller $controller)
     {
-        $this->assertEquals(new TemplateResponse('index', ['name' => 'tim']), $controller->template());
+        $this->assertEquals(new TemplateResult('index', ['name' => 'tim']), $controller->template());
     }
 
     /**
@@ -52,7 +52,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testRedirect(Controller $controller)
     {
-        $this->assertEquals(new RedirectResponse('index'), $controller->redirect());
+        $this->assertEquals(new RedirectResult('index'), $controller->redirect());
     }
 
 }

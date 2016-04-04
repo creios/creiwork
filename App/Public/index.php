@@ -4,8 +4,8 @@ use DI\ContainerBuilder;
 use TimTegeler\Routerunner\Routerunner;
 
 date_default_timezone_set('UTC');
-
 session_start();
+ob_start();
 
 require_once "../vendor/autoload.php";
 
@@ -24,5 +24,9 @@ $whoops->register();
 /** @var Routerunner $routerunner */
 $routerunner = $container->get('TimTegeler\Routerunner\Routerunner');
 $routerunner->parse("../routes");
-$routerunner->setPostProcessor($container->get('Creios\Creiwork\Util\OutputLayer'));
-echo $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+$routerunner->setPostProcessor($container->get('Creios\Creiwork\Util\ResponseBuilder'));
+/** @var \Creios\Http\Message\Response $response */
+$response = $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+
+ob_end_clean();
+out($response);

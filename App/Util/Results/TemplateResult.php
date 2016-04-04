@@ -1,11 +1,12 @@
 <?php
-namespace Creios\Creiwork\Responses;
+
+namespace Creios\Creiwork\Util\Results;
 
 /**
- * Class TemplateResponse
- * @package Creios\Creiwork\Responses
+ * Class TemplateResult
+ * @package Creios\Creiwork\Util\Results
  */
-class TemplateResponse extends DataResponse
+class TemplateResult extends DataResult
 {
 
     /**
@@ -14,7 +15,7 @@ class TemplateResponse extends DataResponse
     protected $template;
 
     /**
-     * TemplateResponse constructor.
+     * TemplateResult constructor.
      * @param array $template
      * @param array $data
      */

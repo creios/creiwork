@@ -8,6 +8,10 @@ use Creios\Creiwork\Responses\TemplateResponse;
 use League\Plates\Engine;
 use TimTegeler\Routerunner\PostProcessor\PostProcessorInterface;
 
+/**
+ * Class OutputLayer
+ * @package Creios\Creiwork\Util
+ */
 class OutputLayer implements PostProcessorInterface
 {
 

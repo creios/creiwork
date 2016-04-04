@@ -2,12 +2,15 @@
 namespace Creios\Creiwork\Responses;
 
 /**
- * Class DataLayer
- * @package Creios\Creiwork\Util
+ * Class TemplateResponse
+ * @package Creios\Creiwork\Responses
  */
 class TemplateResponse extends DataResponse
 {
 
+    /**
+     * @var string
+     */
     protected $template;
 
     /**
@@ -22,12 +25,11 @@ class TemplateResponse extends DataResponse
     }
 
     /**
-     * @return array
+     * @return string
      */
     public function getTemplate()
     {
         return $this->template;
     }
 
-    
 }

@@ -37,5 +37,5 @@ docker-compose up
 - [Monolog](https://github.com/Seldaek/monolog): Sends your logs to files, sockets, inboxes, databases and various web services
 - [Phpunit](https://github.com/sebastianbergmann/phpunit): The PHP Unit Testing framework
 - [Robo](https://github.com/Codegyre/Robo): Modern task runner for PHP
-- [Bower](https://github.com/bower/bower): A package manager for the web
+- [Whoops](https://github.com/bower/bower): PHP errors for cool kids
 

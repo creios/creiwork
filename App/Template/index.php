@@ -1,4 +1,4 @@
-<?php $this->layout('main', ['title' => 'Creiwork']) ?>
+<?php $this->layout('main', ['title' => 'Creiwork']); ?>
 
 <br>
 <div class="jumbotron">

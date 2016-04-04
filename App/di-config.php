@@ -37,4 +37,5 @@ return [
             $logger->pushHandler(new StreamHandler('../test.log', Logger::INFO));
             return $logger;
         }
+
 ];

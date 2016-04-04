@@ -46,5 +46,5 @@ return [
         function () {
             return new StreamHandler('../test.log', Logger::INFO);
         }
-    
+
 ];

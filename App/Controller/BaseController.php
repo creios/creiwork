@@ -46,6 +46,4 @@ abstract class BaseController implements ControllerInterface
         $this->reroutedUri = $reroutedUri;
     }
 
-
-
 }

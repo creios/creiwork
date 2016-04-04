@@ -27,5 +27,5 @@ class Controller extends BaseController
     {
         return new RedirectResult('index');
     }
-    
+
 }

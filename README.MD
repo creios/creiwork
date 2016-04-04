@@ -20,6 +20,14 @@ Creiwork uses bower to install client-side dependencies.
 bower install
 ```
 
+## Start
+
+Creiwork is build to work with docker.
+
+```sh
+docker-compose up
+```
+
 ## Awesome Packages
 
 - [PHP-DI](https://github.com/PHP-DI/PHP-DI): The dependency injection container for humans

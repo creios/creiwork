@@ -2,6 +2,8 @@
 namespace Creios\Creiwork\Util;
 
 use Creios\Creiwork\Responses\JsonResponse;
+use Creios\Creiwork\Responses\RedirectResponse;
+use Creios\Creiwork\Responses\Response;
 use Creios\Creiwork\Responses\TemplateResponse;
 use League\Plates\Engine;
 use TimTegeler\Routerunner\PostProcessor\PostProcessorInterface;
@@ -22,8 +24,8 @@ class OutputLayer implements PostProcessorInterface
     }
 
     /**
-     * @param mixed
-     * @return mixed
+     * @param Response $output
+     * @return string
      */
     public function process($output)
     {
@@ -31,6 +33,9 @@ class OutputLayer implements PostProcessorInterface
             return $this->engine->render($output->getTemplate(), $output->getData());
         } else if ($output instanceof JsonResponse) {
             return json_encode($output->getData());
+        } else if ($output instanceof RedirectResponse) {
+            header("Location: " . $output->getUrl());
+            return "";
         } else {
             return $output;
         }

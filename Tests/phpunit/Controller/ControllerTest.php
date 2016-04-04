@@ -3,6 +3,7 @@
 namespace Creios\Creiwork\Controller;
 
 use Creios\Creiwork\Responses\JsonResponse;
+use Creios\Creiwork\Responses\RedirectResponse;
 use Creios\Creiwork\Responses\TemplateResponse;
 use DI\Container;
 use DI\ContainerBuilder;
@@ -33,5 +34,12 @@ class ControllerTest extends PHPUnit_Framework_TestCase
         /** @var \Creios\Creiwork\Controller\Controller $controller */
         $controller = $this->container->get('Creios\Creiwork\Controller\Controller');
         $this->assertEquals(new TemplateResponse('index', ['name' => 'tim']), $controller->template());
+    }
+
+    public function testRedirect()
+    {
+        /** @var \Creios\Creiwork\Controller\Controller $controller */
+        $controller = $this->container->get('Creios\Creiwork\Controller\Controller');
+        $this->assertEquals(new RedirectResponse('index'), $controller->redirect());
     }
 }

@@ -3,6 +3,7 @@
 namespace Creios\Creiwork\Controller;
 
 use Creios\Creiwork\Responses\JsonResponse;
+use Creios\Creiwork\Responses\RedirectResponse;
 use Creios\Creiwork\Responses\TemplateResponse;
 
 /**
@@ -21,4 +22,10 @@ class Controller extends BaseController
     {
         return new TemplateResponse('index', ['name' => 'tim']);
     }
+
+    public function redirect()
+    {
+        return new RedirectResponse('index');
+    }
+    
 }

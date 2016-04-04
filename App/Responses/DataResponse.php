@@ -2,9 +2,16 @@
 
 namespace Creios\Creiwork\Responses;
 
+/**
+ * Class DataResponse
+ * @package Creios\Creiwork\Responses
+ */
 abstract class DataResponse extends Response
 {
 
+    /**
+     * @var array
+     */
     protected $data;
 
     /**

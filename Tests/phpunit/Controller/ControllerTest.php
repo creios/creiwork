@@ -5,41 +5,54 @@ namespace Creios\Creiwork\Controller;
 use Creios\Creiwork\Responses\JsonResponse;
 use Creios\Creiwork\Responses\RedirectResponse;
 use Creios\Creiwork\Responses\TemplateResponse;
-use DI\Container;
-use DI\ContainerBuilder;
+use Monolog\Logger;
 use PHPUnit_Framework_TestCase;
 
+/**
+ * Class ControllerTest
+ * @package Creios\Creiwork\Controller
+ */
 class ControllerTest extends PHPUnit_Framework_TestCase
 {
 
-    /** @var Container */
-    protected $container;
-
-    public function setUp()
+    /**
+     * @return Controller
+     */
+    public function testControllerConstruct()
     {
-        $containerBuilder = new ContainerBuilder();
-        $containerBuilder->addDefinitions('App/di-config.php');
-        $this->container = $containerBuilder->build();
+        $streamHandlerMock = $this->getMockBuilder('Monolog\Handler\StreamHandler')
+            ->setConstructorArgs([__DIR__ . '/test.log', Logger::INFO])
+            ->getMock();
+        /** @var Logger $loggerMock */
+        $loggerMock = $this->getMockBuilder('Monolog\Logger')->setConstructorArgs([$streamHandlerMock])->getMock();
+        return new Controller($loggerMock);
     }
 
-    public function testIndex()
+    /**
+     * @depends testControllerConstruct
+     * @param Controller $controller
+     */
+    public function testIndex(Controller $controller)
     {
-        /** @var \Creios\Creiwork\Controller\Controller $controller */
-        $controller = $this->container->get('Creios\Creiwork\Controller\Controller');
         $this->assertEquals(new JsonResponse(['title' => 'index']), $controller->index());
     }
 
-    public function testTemplate()
+    /**
+     * @depends testControllerConstruct
+     * @param Controller $controller
+     */
+    public function testTemplate(Controller $controller)
     {
-        /** @var \Creios\Creiwork\Controller\Controller $controller */
-        $controller = $this->container->get('Creios\Creiwork\Controller\Controller');
         $this->assertEquals(new TemplateResponse('index', ['name' => 'tim']), $controller->template());
     }
 
-    public function testRedirect()
+    /**
+     * @depends testControllerConstruct
+     * @param Controller $controller
+     */
+    public function testRedirect(Controller $controller)
     {
-        /** @var \Creios\Creiwork\Controller\Controller $controller */
-        $controller = $this->container->get('Creios\Creiwork\Controller\Controller');
         $this->assertEquals(new RedirectResponse('index'), $controller->redirect());
     }
+
 }

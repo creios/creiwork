@@ -20,7 +20,7 @@ class Controller extends BaseController
 
     public function template()
     {
-        return new TemplateResult('index', ['name' => 'tim']);
+        return new TemplateResult('index', []);
     }
 
     public function redirect()

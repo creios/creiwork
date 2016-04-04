@@ -24,7 +24,7 @@ return [
      * @return Engine
      */
         function () {
-            return new Engine('../Template');
+            return new Engine(__DIR__.'/Template');
         },
 
     'Monolog\Logger' =>
@@ -44,7 +44,7 @@ return [
      * @return StreamHandler
      */
         function () {
-            return new StreamHandler('../test.log', Logger::INFO);
+            return new StreamHandler(__DIR__.'/test.log', Logger::INFO);
         }
 
 ];

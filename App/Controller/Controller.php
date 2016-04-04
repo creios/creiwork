@@ -2,6 +2,9 @@
 
 namespace Creios\Creiwork\Controller;
 
+use Creios\Creiwork\Responses\JsonResponse;
+use Creios\Creiwork\Responses\TemplateResponse;
+
 /**
  * Class Controller
  * @package Creios\Creiwork\Controller
@@ -9,12 +12,13 @@ namespace Creios\Creiwork\Controller;
 class Controller extends BaseController
 {
 
-    /**
-     * @return string
-     */
     public function index()
     {
-        return $this->templates->render('index');
+        return new JsonResponse(['title' => 'index']);
     }
 
+    public function template()
+    {
+        return new TemplateResponse('index', ['name' => 'tim']);
+    }
 }

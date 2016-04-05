@@ -11,11 +11,11 @@ return [
     'TimTegeler\Routerunner\Routerunner' =>
 
     /**
-     * @param Container $c
+     * @param Container $container
      * @return Routerunner
      */
-        function (Container $c) {
-            return new Routerunner('Creios\Creiwork\Controller', $c);
+        function (Container $container) {
+            return new Routerunner('Creios\Creiwork\Controller', $container);
         },
 
     'League\Plates\Engine' =>
@@ -24,7 +24,7 @@ return [
      * @return Engine
      */
         function () {
-            return new Engine('../Templates');
+            return new Engine(__DIR__.'/Template');
         },
 
     'Monolog\Logger' =>
@@ -32,9 +32,19 @@ return [
     /**
      * @return Logger
      */
-        function () {
+        function (Container $container) {
             $logger = new Logger('Creiwork');
-            $logger->pushHandler(new StreamHandler('../test.log', Logger::INFO));
+            $logger->pushHandler($container->get('Monolog\Handler\StreamHandler'));
             return $logger;
+        },
+
+    'Monolog\Handler\StreamHandler' =>
+
+    /**
+     * @return StreamHandler
+     */
+        function () {
+            return new StreamHandler(__DIR__.'/test.log', Logger::INFO);
         }
+
 ];

@@ -2,6 +2,10 @@
 
 namespace Creios\Creiwork\Controller;
 
+use Creios\Creiwork\Util\Results\JsonResult;
+use Creios\Creiwork\Util\Results\RedirectResult;
+use Creios\Creiwork\Util\Results\TemplateResult;
+
 /**
  * Class Controller
  * @package Creios\Creiwork\Controller
@@ -9,12 +13,19 @@ namespace Creios\Creiwork\Controller;
 class Controller extends BaseController
 {
 
-    /**
-     * @return string
-     */
     public function index()
     {
-        return $this->templates->render('index', ['name' => 'Jonathan']);
+        return new JsonResult(['title' => 'index']);
+    }
+
+    public function template()
+    {
+        return new TemplateResult('index', []);
+    }
+
+    public function redirect()
+    {
+        return new RedirectResult('index');
     }
 
 }

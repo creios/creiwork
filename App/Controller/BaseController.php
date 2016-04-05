@@ -2,7 +2,7 @@
 
 namespace Creios\Creiwork\Controller;
 
-use League\Plates\Engine;
+use Creios\Creiwork\Util\DataLayer;
 use Monolog\Logger;
 use TimTegeler\Routerunner\Controller\ControllerInterface;
 
@@ -13,10 +13,6 @@ use TimTegeler\Routerunner\Controller\ControllerInterface;
 abstract class BaseController implements ControllerInterface
 {
 
-    /**
-     * @var Engine
-     */
-    protected $templates;
     /**
      * @var Logger
      */
@@ -29,12 +25,10 @@ abstract class BaseController implements ControllerInterface
 
     /**
      * BaseController constructor.
-     * @param Engine $templates
      * @param Logger $logger
      */
-    public function __construct(Engine $templates, Logger $logger)
+    public function __construct(Logger $logger)
     {
-        $this->templates = $templates;
         $this->logger = $logger;
     }
 

@@ -1,2 +1,3 @@
-GET /       Controller->index
-GET /test   Controller->test
+GET /         Controller->index
+GET /template Controller->template
+GET /redirect Controller->redirect

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "698bda13c58d547ff285dbcfd5ed85d8",
-    "content-hash": "3d91db8fd648bc0d65ca7091c71596f3",
+    "hash": "46de11dc3e199d31bed7c4d707666d41",
+    "content-hash": "06720d0e1d14018ffa91960a7a833914",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -36,16 +36,16 @@
         },
         {
             "name": "creios/http-message",
-            "version": "v0.0.2",
+            "version": "v0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/http-message.git",
-                "reference": "259b6616847847f3879334f4992dcb9667c34daf"
+                "reference": "00d1a10e695315d0db2d2247d07d2ad78fba8688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/http-message/zipball/259b6616847847f3879334f4992dcb9667c34daf",
-                "reference": "259b6616847847f3879334f4992dcb9667c34daf",
+                "url": "https://api.github.com/repos/creios/http-message/zipball/00d1a10e695315d0db2d2247d07d2ad78fba8688",
+                "reference": "00d1a10e695315d0db2d2247d07d2ad78fba8688",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
                 }
             ],
             "description": "Implementation of HTTP Message Interface (psr7)",
-            "time": "2016-04-04 19:41:47"
+            "time": "2016-04-05 07:18:59"
         },
         {
             "name": "filp/whoops",

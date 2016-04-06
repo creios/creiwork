@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46de11dc3e199d31bed7c4d707666d41",
-    "content-hash": "06720d0e1d14018ffa91960a7a833914",
+    "hash": "bf4a826e95c66d05c73b613759846b2a",
+    "content-hash": "a07912a2171a8c273e04bfede43905da",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -35,29 +35,30 @@
             "time": "2014-12-30 15:22:37"
         },
         {
-            "name": "creios/http-message",
-            "version": "v0.0.5",
+            "name": "creios/http",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/creios/http-message.git",
-                "reference": "00d1a10e695315d0db2d2247d07d2ad78fba8688"
+                "url": "https://github.com/creios/http.git",
+                "reference": "757e80e5f76ff863fc12548ecd9a43c033042221"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/http-message/zipball/00d1a10e695315d0db2d2247d07d2ad78fba8688",
-                "reference": "00d1a10e695315d0db2d2247d07d2ad78fba8688",
+                "url": "https://api.github.com/repos/creios/http/zipball/757e80e5f76ff863fc12548ecd9a43c033042221",
+                "reference": "757e80e5f76ff863fc12548ecd9a43c033042221",
                 "shasum": ""
             },
             "require": {
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "codegyre/robo": "^0.7.1"
+                "codegyre/robo": "^0.7.1",
+                "phpunit/phpunit": "^4.8"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Creios\\Http\\Message\\": "src"
+                    "Creios\\Http\\": "lib"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -71,7 +72,7 @@
                 }
             ],
             "description": "Implementation of HTTP Message Interface (psr7)",
-            "time": "2016-04-05 07:18:59"
+            "time": "2016-04-06 06:45:58"
         },
         {
             "name": "filp/whoops",
@@ -1979,7 +1980,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "creios/http": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

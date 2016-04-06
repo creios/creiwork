@@ -35,18 +35,27 @@ class ResponseBuilder implements PostProcessorInterface
      */
     public function process($output)
     {
-        $response = new Response('1.1');
+        $response = (new Response())->withProtocolVersion('1.1');
+        $stream = new StringStream();
 
         if ($output instanceof TemplateResult) {
+            $stream->write($this->engine->render($output->getTemplate(), $output->getData()));
+
             $response = $response->withHeader('Content-Type', 'text/html')
-                ->withBody(new StringStream($this->engine->render($output->getTemplate(), $output->getData())));
+                ->withBody($stream);
+
         } else if ($output instanceof JsonResult) {
+            $stream->write(json_encode($output->getData()));
+
             $response = $response->withHeader('Content-Type', 'application/json')
-                ->withBody(new StringStream(json_encode($output->getData())));
+                ->withBody($stream);
+
         } else if ($output instanceof RedirectResult) {
             $response = $response->withHeader('Location', $output->getUrl());
+
         } else {
-            $response = $response->withHeader('Content-Type', 'text/plain')->withBody(new StringStream($output));
+            $stream->write($output);
+            $response = $response->withHeader('Content-Type', 'text/plain')->withBody($stream);
         }
 
         return $response;

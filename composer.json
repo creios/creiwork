@@ -20,8 +20,8 @@
     "timtegeler/routerunner": "^0.0.9",
     "league/plates": "^3.1",
     "monolog/monolog": "^1.18",
-    "filp/whoops": "^2.1",
-    "creios/http-message": "^0.0.5"
+    "filp/whoops": "2.1.0",
+    "creios/http": "dev-master"
   },
   "autoload": {
     "psr-4": {

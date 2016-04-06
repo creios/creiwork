@@ -1,3 +1,4 @@
 GET /           Controller->index
 GET /json       Controller->json
 GET /redirect   Controller->redirect
+GET /printRequest  Controller->printRequest

@@ -20,14 +20,17 @@ class Controller extends BaseController
 
     public function json()
     {
-        echo 1;
-        
-        return print_r($this->request, true);
+        return new JsonResult(['index', 'title']);
     }
 
     public function redirect()
     {
         return new RedirectResult('index');
+    }
+
+    public function printRequest()
+    {
+        return print_r($this->request, true);
     }
 
 }

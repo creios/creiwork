@@ -3,6 +3,7 @@
 namespace Creios\Creiwork\Controller;
 
 use Creios\Creiwork\Util\DataLayer;
+use Creios\Http\Message\ServerRequest;
 use Monolog\Logger;
 use TimTegeler\Routerunner\Controller\ControllerInterface;
 
@@ -13,6 +14,10 @@ use TimTegeler\Routerunner\Controller\ControllerInterface;
 abstract class BaseController implements ControllerInterface
 {
 
+    /**
+     * @var ServerRequest
+     */
+    protected $request;
     /**
      * @var Logger
      */
@@ -25,10 +30,12 @@ abstract class BaseController implements ControllerInterface
 
     /**
      * BaseController constructor.
+     * @param ServerRequest $serverRequest
      * @param Logger $logger
      */
-    public function __construct(Logger $logger)
+    public function __construct(ServerRequest $serverRequest, Logger $logger)
     {
+        $this->request = $serverRequest;
         $this->logger = $logger;
     }
 
@@ -39,7 +46,5 @@ abstract class BaseController implements ControllerInterface
     {
         $this->reroutedUri = $reroutedUri;
     }
-
-
 
 }

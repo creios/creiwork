@@ -1,5 +1,6 @@
 <?php
 
+use Creios\Http\ServerRequestBuilder;
 use DI\Container;
 use League\Plates\Engine;
 use Monolog\Handler\StreamHandler;
@@ -24,7 +25,7 @@ return [
      * @return Engine
      */
         function () {
-            return new Engine(__DIR__.'/Template');
+            return new Engine(__DIR__ . '/Template');
         },
 
     'Monolog\Logger' =>
@@ -44,7 +45,14 @@ return [
      * @return StreamHandler
      */
         function () {
-            return new StreamHandler(__DIR__.'/test.log', Logger::INFO);
+            return new StreamHandler(__DIR__ . '/test.log', Logger::INFO);
+        },
+
+    'Creios\Http\Message\ServerRequest' =>
+
+    /** return ServerRequest */
+        function () {
+            return (new ServerRequestBuilder(getallheaders(), $_SERVER, $_COOKIE, $_GET, $_POST, $_FILES))->build();
         }
 
 ];

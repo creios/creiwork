@@ -15,12 +15,14 @@ class Controller extends BaseController
 
     public function index()
     {
-        return new JsonResult(['title' => 'index']);
+        return new TemplateResult('index', []);
     }
 
-    public function template()
+    public function json()
     {
-        return new TemplateResult('index', []);
+        echo 1;
+        
+        return print_r($this->request, true);
     }
 
     public function redirect()

@@ -1,3 +1,3 @@
-GET /         Controller->index
-GET /template Controller->template
-GET /redirect Controller->redirect
+GET /           Controller->index
+GET /json       Controller->json
+GET /redirect   Controller->redirect

@@ -7,7 +7,7 @@ date_default_timezone_set('UTC');
 session_start();
 ob_start();
 
-require_once "../vendor/autoload.php";
+require_once "../Vendor/autoload.php";
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions('../di-config.php');

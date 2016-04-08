@@ -1,6 +1,7 @@
 <?php
 namespace Creios\Creiwork\Util;
 
+use Creios\Creiwork\Util\Results\FileDownloadResult;
 use Creios\Creiwork\Util\Results\JsonResult;
 use Creios\Creiwork\Util\Results\RedirectResult;
 use Creios\Creiwork\Util\Results\Result;
@@ -50,6 +51,11 @@ class ResponseBuilder implements PostProcessorInterface
 
         } else if ($output instanceof RedirectResult) {
             $response = $response->withHeader('Location', $output->getUrl());
+
+        } elseif ($output instanceof FileDownloadResult) {
+            $mimeType = (new \finfo(FILEINFO_MIME_TYPE))->file($output->getPath());
+            $response = $response->withHeader('Content-Type', $mimeType)
+                ->withBody(\GuzzleHttp\Psr7\stream_for(fopen($output->getPath(), 'r')));
 
         } else {
             $stream = \GuzzleHttp\Psr7\stream_for($output);

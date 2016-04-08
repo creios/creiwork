@@ -2,6 +2,7 @@
 
 namespace Creios\Creiwork\Controller;
 
+use Creios\Creiwork\Util\Results\FileDownloadResult;
 use Creios\Creiwork\Util\Results\JsonResult;
 use Creios\Creiwork\Util\Results\RedirectResult;
 use Creios\Creiwork\Util\Results\TemplateResult;

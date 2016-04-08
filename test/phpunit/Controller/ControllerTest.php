@@ -2,11 +2,13 @@
 
 namespace Creios\Creiwork\Controller;
 
-use Creios\Creiwork\Util\Results\JsonResult;
-use Creios\Creiwork\Util\Results\RedirectResult;
-use Creios\Creiwork\Util\Results\TemplateResult;
+use Creios\Creiwork\Framework\Result\JsonResult;
+use Creios\Creiwork\Framework\Result\RedirectResult;
+use Creios\Creiwork\Framework\Result\TemplateResult;
 use Monolog\Logger;
 use PHPUnit_Framework_TestCase;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class ControllerTest
@@ -14,18 +16,23 @@ use PHPUnit_Framework_TestCase;
  */
 class ControllerTest extends PHPUnit_Framework_TestCase
 {
+    /** @var \PHPUnit_Framework_MockObject_MockObject|ServerRequestInterface */
+    private $serverRequestMock;
+    /** @var \PHPUnit_Framework_MockObject_MockObject|Logger */
+    private $loggerMock;
+
+    public function setUp()
+    {
+        $this->serverRequestMock = $this->getMock(ServerRequestInterface::class);
+        $this->loggerMock = $this->getMock(LoggerInterface::class);
+    }
 
     /**
      * @return Controller
      */
     public function testControllerConstruct()
     {
-        $streamHandlerMock = $this->getMockBuilder('Monolog\Handler\StreamHandler')
-            ->setConstructorArgs([__DIR__ . '/test.log', Logger::INFO])
-            ->getMock();
-        /** @var Logger $loggerMock */
-        $loggerMock = $this->getMockBuilder('Monolog\Logger')->setConstructorArgs([$streamHandlerMock])->getMock();
-        return new Controller($loggerMock);
+        return new Controller($this->serverRequestMock, $this->loggerMock);
     }
 
     /**
@@ -34,16 +41,16 @@ class ControllerTest extends PHPUnit_Framework_TestCase
      */
     public function testIndex(Controller $controller)
     {
-        $this->assertEquals(new JsonResult(['title' => 'index']), $controller->index());
+        $this->assertEquals(new TemplateResult('index', []), $controller->index());
     }
 
     /**
      * @depends testControllerConstruct
      * @param Controller $controller
      */
-    public function testTemplate(Controller $controller)
+    public function testJson(Controller $controller)
     {
-        $this->assertEquals(new TemplateResult('index', []), $controller->template());
+        $this->assertEquals(new JsonResult(['index', 'title']), $controller->json());
     }
 
     /**

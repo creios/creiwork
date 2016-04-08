@@ -16,6 +16,8 @@ use Psr\Log\LoggerInterface;
  */
 class ControllerTest extends PHPUnit_Framework_TestCase
 {
+    /** @var Controller */
+    private $controller;
     /** @var \PHPUnit_Framework_MockObject_MockObject|ServerRequestInterface */
     private $serverRequestMock;
     /** @var \PHPUnit_Framework_MockObject_MockObject|Logger */
@@ -25,41 +27,21 @@ class ControllerTest extends PHPUnit_Framework_TestCase
     {
         $this->serverRequestMock = $this->getMock(ServerRequestInterface::class);
         $this->loggerMock = $this->getMock(LoggerInterface::class);
+        $this->controller = new Controller($this->serverRequestMock, $this->loggerMock);
+    }
+    public function testIndex()
+    {
+        $this->assertEquals(new TemplateResult('index', []), $this->controller->index());
     }
 
-    /**
-     * @return Controller
-     */
-    public function testControllerConstruct()
+    public function testJson()
     {
-        return new Controller($this->serverRequestMock, $this->loggerMock);
+        $this->assertEquals(new JsonResult(['index', 'title']), $this->controller->json());
     }
 
-    /**
-     * @depends testControllerConstruct
-     * @param Controller $controller
-     */
-    public function testIndex(Controller $controller)
+    public function testRedirect()
     {
-        $this->assertEquals(new TemplateResult('index', []), $controller->index());
-    }
-
-    /**
-     * @depends testControllerConstruct
-     * @param Controller $controller
-     */
-    public function testJson(Controller $controller)
-    {
-        $this->assertEquals(new JsonResult(['index', 'title']), $controller->json());
-    }
-
-    /**
-     * @depends testControllerConstruct
-     * @param Controller $controller
-     */
-    public function testRedirect(Controller $controller)
-    {
-        $this->assertEquals(new RedirectResult('index'), $controller->redirect());
+        $this->assertEquals(new RedirectResult('index'), $this->controller->redirect());
     }
 
 }

@@ -1,10 +1,10 @@
 <?php
 
-use Creios\Http\ServerRequestBuilder;
 use DI\Container;
 use League\Plates\Engine;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Psr\Http\Message\ServerRequestInterface;
 use TimTegeler\Routerunner\Routerunner;
 
 return [
@@ -48,11 +48,6 @@ return [
             return new StreamHandler(__DIR__ . '/test.log', Logger::INFO);
         },
 
-    'Creios\Http\Message\ServerRequest' =>
-
-    /** return ServerRequest */
-        function () {
-            return (new ServerRequestBuilder(getallheaders(), $_SERVER, $_COOKIE, $_GET, $_POST, $_FILES))->build();
-        }
+    ServerRequestInterface::class => DI\factory([GuzzleHttp\Psr7\ServerRequest::class, 'fromGlobals'])
 
 ];

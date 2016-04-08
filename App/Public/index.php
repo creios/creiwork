@@ -25,7 +25,7 @@ $whoops->register();
 $routerunner = $container->get('TimTegeler\Routerunner\Routerunner');
 $routerunner->parse("../routes");
 $routerunner->setPostProcessor($container->get('Creios\Creiwork\Util\ResponseBuilder'));
-/** @var \Creios\Http\Message\Response $response */
+/** @var GuzzleHttp\Psr7\Response $response */
 $response = $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 
 ob_end_clean();

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf4a826e95c66d05c73b613759846b2a",
-    "content-hash": "a07912a2171a8c273e04bfede43905da",
+    "hash": "df9870dec5866e28c800dc96131b67aa",
+    "content-hash": "be8ec7d605a5933964cc9d25f74bce35",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -33,46 +33,6 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
-        },
-        {
-            "name": "creios/http",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/creios/http.git",
-                "reference": "757e80e5f76ff863fc12548ecd9a43c033042221"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/creios/http/zipball/757e80e5f76ff863fc12548ecd9a43c033042221",
-                "reference": "757e80e5f76ff863fc12548ecd9a43c033042221",
-                "shasum": ""
-            },
-            "require": {
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "codegyre/robo": "^0.7.1",
-                "phpunit/phpunit": "^4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Creios\\Http\\": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Tegeler",
-                    "email": "tegeler@creios.net"
-                }
-            ],
-            "description": "Implementation of HTTP Message Interface (psr7)",
-            "time": "2016-04-06 06:45:58"
         },
         {
             "name": "filp/whoops",
@@ -133,6 +93,64 @@
                 "zf2"
             ],
             "time": "2016-03-13 10:22:39"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "0edec79e2acf5df0105046af7f1eebcf31656462"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/0edec79e2acf5df0105046af7f1eebcf31656462",
+                "reference": "0edec79e2acf5df0105046af7f1eebcf31656462",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-03-24 02:39:15"
         },
         {
             "name": "league/plates",
@@ -1981,7 +1999,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "creios/http": 20
+        "guzzlehttp/psr7": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -5,8 +5,7 @@ use Creios\Creiwork\Util\Results\JsonResult;
 use Creios\Creiwork\Util\Results\RedirectResult;
 use Creios\Creiwork\Util\Results\Result;
 use Creios\Creiwork\Util\Results\TemplateResult;
-use Creios\Http\Message\Response;
-use Creios\Http\Message\StringStream;
+use GuzzleHttp\Psr7\Response;
 use League\Plates\Engine;
 use TimTegeler\Routerunner\PostProcessor\PostProcessorInterface;
 
@@ -36,16 +35,15 @@ class ResponseBuilder implements PostProcessorInterface
     public function process($output)
     {
         $response = (new Response())->withProtocolVersion('1.1');
-        $stream = new StringStream();
 
         if ($output instanceof TemplateResult) {
-            $stream->write($this->engine->render($output->getTemplate(), $output->getData()));
+            $stream = \GuzzleHttp\Psr7\stream_for($this->engine->render($output->getTemplate(), $output->getData()));
 
             $response = $response->withHeader('Content-Type', 'text/html')
                 ->withBody($stream);
 
         } else if ($output instanceof JsonResult) {
-            $stream->write(json_encode($output->getData()));
+            $stream = \GuzzleHttp\Psr7\stream_for(json_encode($output->getData()));
 
             $response = $response->withHeader('Content-Type', 'application/json')
                 ->withBody($stream);
@@ -54,7 +52,7 @@ class ResponseBuilder implements PostProcessorInterface
             $response = $response->withHeader('Location', $output->getUrl());
 
         } else {
-            $stream->write($output);
+            $stream = \GuzzleHttp\Psr7\stream_for($output);
             $response = $response->withHeader('Content-Type', 'text/plain')->withBody($stream);
         }
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b2b06d4e7a224ae113b3c2a92fdafff6",
+    "hash": "b9879e76145ede1fc9b9629efe0e4f79",
     "content-hash": "279d1f810929a05153bf45453d9a92e1",
     "packages": [
         {
@@ -40,12 +40,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "4945583a283017a3768224e96b0a2aac4022c51c"
+                "reference": "8d720cad6926192f979b4330a89092f5089d4b0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/4945583a283017a3768224e96b0a2aac4022c51c",
-                "reference": "4945583a283017a3768224e96b0a2aac4022c51c",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/8d720cad6926192f979b4330a89092f5089d4b0f",
+                "reference": "8d720cad6926192f979b4330a89092f5089d4b0f",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2016-04-08 11:33:18"
+            "time": "2016-04-08 12:02:30"
         },
         {
             "name": "filp/whoops",

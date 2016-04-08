@@ -1,53 +1,30 @@
 <?php
 
-use DI\Container;
-use League\Plates\Engine;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use GuzzleHttp\Psr7\ServerRequest;
+use Interop\Container\ContainerInterface;
+use League\Plates;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 use TimTegeler\Routerunner\Routerunner;
+use function DI\factory;
+use function DI\object;
 
 return [
 
-    'TimTegeler\Routerunner\Routerunner' =>
+    Routerunner::class => function (ContainerInterface $container) {
+        return new Routerunner('Creios\Creiwork\Controller', $container);
+    },
 
-    /**
-     * @param Container $container
-     * @return Routerunner
-     */
-        function (Container $container) {
-            return new Routerunner('Creios\Creiwork\Controller', $container);
-        },
+    Plates\Engine::class => object()->constructor(__DIR__.'/../template'),
 
-    'League\Plates\Engine' =>
+    LoggerInterface::class => function (\Monolog\Handler\StreamHandler $streamHandler) {
+        $logger = new \Monolog\Logger('Creiwork');
+        $logger->pushHandler($streamHandler);
+        return $logger;
+    },
 
-    /**
-     * @return Engine
-     */
-        function () {
-            return new Engine(__DIR__ . '/../template');
-        },
+    \Monolog\Handler\StreamHandler::class => object()->constructor(__DIR__.'/../log/test.log', \Monolog\Logger::INFO),
 
-    'Monolog\Logger' =>
-
-    /**
-     * @return Logger
-     */
-        function (Container $container) {
-            $logger = new Logger('Creiwork');
-            $logger->pushHandler($container->get('Monolog\Handler\StreamHandler'));
-            return $logger;
-        },
-
-    'Monolog\Handler\StreamHandler' =>
-
-    /**
-     * @return StreamHandler
-     */
-        function () {
-            return new StreamHandler(__DIR__ . '/../log/test.log', Logger::INFO);
-        },
-
-    ServerRequestInterface::class => DI\factory([GuzzleHttp\Psr7\ServerRequest::class, 'fromGlobals'])
+    ServerRequestInterface::class => factory([ServerRequest::class, 'fromGlobals']),
 
 ];

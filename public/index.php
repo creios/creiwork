@@ -1,7 +1,9 @@
 <?php
 
+use Creios\Creiwork\Framework\ResponseBuilder;
 use DI\ContainerBuilder;
 use TimTegeler\Routerunner\Routerunner;
+use Whoops\Handler\PrettyPageHandler;
 
 date_default_timezone_set('UTC');
 session_start();
@@ -13,18 +15,16 @@ $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions('../config/di-config.php');
 $container = $containerBuilder->build();
 
-/** @var \Whoops\Run $whoops */
-$whoops = $container->get('\Whoops\Run');
+$whoops = $container->get(\Whoops\Run::class);
 //Development
-$whoops->pushHandler($container->get('\Whoops\Handler\PrettyPageHandler'));
+$whoops->pushHandler($container->get(PrettyPageHandler::class));
 //Production
-//$whoops->pushHandler($container->get('\Creios\Creiwork\Framework\ErrorPageHandler'));
+//$whoops->pushHandler($container->get(\Creios\Creiwork\Framework\ErrorPageHandler::class));
 $whoops->register();
 
-/** @var Routerunner $routerunner */
-$routerunner = $container->get('TimTegeler\Routerunner\Routerunner');
+$routerunner = $container->get(Routerunner::class);
 $routerunner->parse("../config/routes");
-$routerunner->setPostProcessor($container->get('Creios\Creiwork\Framework\ResponseBuilder'));
+$routerunner->setPostProcessor($container->get(ResponseBuilder::class));
 /** @var GuzzleHttp\Psr7\Response $response */
 $response = $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 

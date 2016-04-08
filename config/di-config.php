@@ -25,7 +25,7 @@ return [
      * @return Engine
      */
         function () {
-            return new Engine(__DIR__ . '/Template');
+            return new Engine(__DIR__ . '/../template');
         },
 
     'Monolog\Logger' =>
@@ -45,7 +45,7 @@ return [
      * @return StreamHandler
      */
         function () {
-            return new StreamHandler(__DIR__ . '/test.log', Logger::INFO);
+            return new StreamHandler(__DIR__ . '/../log/test.log', Logger::INFO);
         },
 
     ServerRequestInterface::class => DI\factory([GuzzleHttp\Psr7\ServerRequest::class, 'fromGlobals'])

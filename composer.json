@@ -8,9 +8,6 @@
       "email": "tegeler@creios.net"
     }
   ],
-  "config": {
-    "vendor-dir": "App/Vendor"
-  },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
     "codegyre/robo": "^0.7.1"
@@ -25,10 +22,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Creios\\Creiwork\\": "App"
+      "Creios\\Creiwork\\": "src"
     },
     "files": [
-      "App/Util/functions.php"
+      "src/Util/functions.php"
     ]
   }
 }

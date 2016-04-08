@@ -1,4 +1,4 @@
-<phpunit bootstrap="App/Vendor/autoload.php">
+<phpunit bootstrap="vendor/autoload.php">
     <php>
         <includePath>.</includePath>
         <ini name="date.timezone" value="Europe/Berlin"/>
@@ -16,7 +16,7 @@
     </filter>
     <testsuites>
         <testsuite name="tests">
-            <directory>Tests/phpunit</directory>
+            <directory>test/phpunit</directory>
         </testsuite>
     </testsuites>
 </phpunit>

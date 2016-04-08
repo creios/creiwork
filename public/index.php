@@ -7,10 +7,10 @@ date_default_timezone_set('UTC');
 session_start();
 ob_start();
 
-require_once "../Vendor/autoload.php";
+require_once "../vendor/autoload.php";
 
 $containerBuilder = new ContainerBuilder();
-$containerBuilder->addDefinitions('../di-config.php');
+$containerBuilder->addDefinitions('../config/di-config.php');
 $container = $containerBuilder->build();
 
 /** @var \Whoops\Run $whoops */
@@ -23,7 +23,7 @@ $whoops->register();
 
 /** @var Routerunner $routerunner */
 $routerunner = $container->get('TimTegeler\Routerunner\Routerunner');
-$routerunner->parse("../routes");
+$routerunner->parse("../config/routes");
 $routerunner->setPostProcessor($container->get('Creios\Creiwork\Util\ResponseBuilder'));
 /** @var GuzzleHttp\Psr7\Response $response */
 $response = $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);

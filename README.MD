@@ -1,4 +1,4 @@
-![Creiwork Logo](Image/creiwork.png?raw=true)
+![Creiwork Logo](image/creiwork.png?raw=true)
 
 # Creiwork
 

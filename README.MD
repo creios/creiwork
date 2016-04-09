@@ -31,6 +31,7 @@ docker-compose up
 ## Awesome Packages
 
 - [PHP-DI](https://github.com/PHP-DI/PHP-DI): The dependency injection container for humans
+- [Guzzle PSR-7](https://github.com/guzzle/psr7): PSR-7 HTTP message library
 - [Routerunner](https://github.com/timtegeler/routerunner): Router for HTTP-request written in PHP
 - [Plates](https://github.com/thephpleague/plates): Native PHP template system
 - [Whoops](https://github.com/filp/whoops): PHP errors for cool kids

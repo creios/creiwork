@@ -2,6 +2,8 @@
   "name": "creios/creiwork",
   "description": "A PHP Framework build upon awesome packages",
   "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "authors": [
     {
       "name": "Tim Tegeler",
@@ -13,11 +15,12 @@
     "codegyre/robo": "^0.7.1"
   },
   "require": {
-    "creios/creiwork-framework": "dev-master#0e133adf14346523dce91c603e0338ab89f093b0"
+    "creios/creiwork-framework": "dev-master"
   },
   "autoload": {
     "psr-4": {
       "Creios\\Creiwork\\": "src"
     }
   }
+
 }

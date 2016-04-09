@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "905db9c73939317f6cec6fbec41496d9",
-    "content-hash": "635eb6a3c24321975e25513cb099f29e",
+    "hash": "9bdfcf328d541a17eaf1c7935a0efa1c",
+    "content-hash": "390c2e3d57d156d142870f564116b03a",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -44,13 +44,13 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/84e463d45ed6a53f8aabca3d2eeb89511e21de71",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/0e133adf14346523dce91c603e0338ab89f093b0",
                 "reference": "0e133adf14346523dce91c603e0338ab89f093b0",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "2.1.0",
-                "guzzlehttp/psr7": "^1.2.3",
+                "guzzlehttp/psr7": "dev-master#0edec79e2acf5df0105046af7f1eebcf31656462",
                 "league/plates": "^3.1",
                 "monolog/monolog": "^1.18",
                 "timtegeler/routerunner": "^0.0.10"
@@ -141,16 +141,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
+                "reference": "87f5d23362b4d5646b73b20ab6e8acdb5e305d25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/87f5d23362b4d5646b73b20ab6e8acdb5e305d25",
+                "reference": "87f5d23362b4d5646b73b20ab6e8acdb5e305d25",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-02-18 21:54:00"
+            "time": "2016-04-08 22:35:16"
         },
         {
             "name": "league/plates",
@@ -2042,11 +2042,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "creios/creiwork-framework": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []

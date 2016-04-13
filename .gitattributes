@@ -2,4 +2,4 @@
 /.semver            export-ignore
 /README.md          export-ignore
 /LICENSE            export-ignore
-/images             export-ignore
+/Image              export-ignore

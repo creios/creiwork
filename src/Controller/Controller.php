@@ -3,6 +3,7 @@
 namespace Creios\Creiwork\Controller;
 
 use Creios\Creiwork\Framework\BaseController;
+use Creios\Creiwork\Framework\Result\DownloadableResultInterface;
 use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
 use Creios\Creiwork\Framework\Result\TemplateResult;
@@ -31,7 +32,7 @@ class Controller extends BaseController
     }
 
     /**
-     * @return $this
+     * @return DownloadableResultInterface
      */
     public function jsonDownload()
     {

@@ -40,12 +40,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "98f93c978494ba0adba258bc2dae701260c5d445"
+                "reference": "2224d530bfa328ab0313f09432fd0af0407c664a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/98f93c978494ba0adba258bc2dae701260c5d445",
-                "reference": "98f93c978494ba0adba258bc2dae701260c5d445",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/2224d530bfa328ab0313f09432fd0af0407c664a",
+                "reference": "2224d530bfa328ab0313f09432fd0af0407c664a",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2016-04-15 12:54:40"
+            "time": "2016-04-15 14:57:47"
         },
         {
             "name": "filp/whoops",

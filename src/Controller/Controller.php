@@ -34,9 +34,9 @@ class Controller extends BaseController
         return new RedirectResult('index');
     }
 
-    public function printRequest()
+    public function error()
     {
-        return print_r($this->request, true);
+        throw new \Exception('Artificial exception for demonstration purpose');
     }
 
 }

@@ -21,7 +21,12 @@ class Controller extends BaseController
 
     public function json()
     {
-        return new JsonResult(['index', 'title']);
+        return (new JsonResult(['index', 'title']));
+    }
+
+    public function jsonDownload()
+    {
+        return (new JsonResult(['index', 'title']))->asDownload('test.json');
     }
 
     public function redirect()

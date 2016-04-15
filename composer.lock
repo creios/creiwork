@@ -40,23 +40,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "0e133adf14346523dce91c603e0338ab89f093b0"
+                "reference": "98f93c978494ba0adba258bc2dae701260c5d445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/0e133adf14346523dce91c603e0338ab89f093b0",
-                "reference": "0e133adf14346523dce91c603e0338ab89f093b0",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/98f93c978494ba0adba258bc2dae701260c5d445",
+                "reference": "98f93c978494ba0adba258bc2dae701260c5d445",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "2.1.0",
-                "guzzlehttp/psr7": "dev-master#0edec79e2acf5df0105046af7f1eebcf31656462",
+                "guzzlehttp/psr7": "^1.3.0",
                 "league/plates": "^3.1",
                 "monolog/monolog": "^1.18",
-                "timtegeler/routerunner": "^0.0.10"
+                "php": ">=5.5.0",
+                "timtegeler/routerunner": "^0.0.10",
+                "zumba/json-serializer": "^2.0"
             },
             "require-dev": {
-                "codegyre/robo": "^0.7.1"
+                "codegyre/robo": "^0.7.1",
+                "phpunit/phpunit": "^4.8"
             },
             "type": "library",
             "autoload": {
@@ -77,7 +80,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2016-04-09 19:37:32"
+            "time": "2016-04-15 12:54:40"
         },
         {
             "name": "filp/whoops",
@@ -141,16 +144,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "dev-master",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "87f5d23362b4d5646b73b20ab6e8acdb5e305d25"
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/87f5d23362b4d5646b73b20ab6e8acdb5e305d25",
-                "reference": "87f5d23362b4d5646b73b20ab6e8acdb5e305d25",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/31382fef2889136415751badebbd1cb022a4ed72",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +198,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-04-08 22:35:16"
+            "time": "2016-04-13 19:56:01"
         },
         {
             "name": "league/plates",
@@ -251,16 +254,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.2",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/064b38c16790249488e7a8b987acf1c9d7383c09",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -325,7 +328,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-02 13:12:58"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "php-di/invoker",
@@ -591,21 +594,74 @@
             ],
             "description": "Routerunner is a router for HTTP-request written in PHP",
             "time": "2016-04-09 19:29:46"
+        },
+        {
+            "name": "zumba/json-serializer",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zumba/json-serializer.git",
+                "reference": "6bde2e7e434cc4873fd57fe691468f2cdc9cf1e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zumba/json-serializer/zipball/6bde2e7e434cc4873fd57fe691468f2cdc9cf1e9",
+                "reference": "6bde2e7e434cc4873fd57fe691468f2cdc9cf1e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.*"
+            },
+            "suggest": {
+                "jeremeamia/superclosure": "Allow to serialize PHP closures"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zumba\\": "src/",
+                    "Zumba\\Util\\Test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Juan Basso",
+                    "email": "juan.basso@zumba.com"
+                },
+                {
+                    "name": "Zumba Fitness, LLC",
+                    "email": "engineering@zumba.com"
+                }
+            ],
+            "description": "Serialize PHP variables, including objects, in JSON format. Support to unserialize it too.",
+            "homepage": "http://tech.zumba.com",
+            "keywords": [
+                "json",
+                "serialize",
+                "serializer"
+            ],
+            "time": "2016-03-17 13:27:18"
         }
     ],
     "packages-dev": [
         {
             "name": "codegyre/robo",
-            "version": "0.7.1",
+            "version": "0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codegyre/Robo.git",
-                "reference": "1f4e0621fdc37521e2eaca67f33d1c4e240dc7d8"
+                "reference": "9982edecb19f59420031dd9855b0d31e861b8b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codegyre/Robo/zipball/1f4e0621fdc37521e2eaca67f33d1c4e240dc7d8",
-                "reference": "1f4e0621fdc37521e2eaca67f33d1c4e240dc7d8",
+                "url": "https://api.github.com/repos/Codegyre/Robo/zipball/9982edecb19f59420031dd9855b0d31e861b8b68",
+                "reference": "9982edecb19f59420031dd9855b0d31e861b8b68",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +703,7 @@
                 }
             ],
             "description": "Modern task runner",
-            "time": "2016-02-25 19:28:51"
+            "time": "2016-04-13 20:14:17"
         },
         {
             "name": "doctrine/instantiator",

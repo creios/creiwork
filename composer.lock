@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9bdfcf328d541a17eaf1c7935a0efa1c",
-    "content-hash": "390c2e3d57d156d142870f564116b03a",
+    "hash": "500aabde24884eec349b493e5670c275",
+    "content-hash": "4c53b1f5567deeaa997c54f14a38a417",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -40,12 +40,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "2224d530bfa328ab0313f09432fd0af0407c664a"
+                "reference": "48fcf3dc483c14fb1dea62b5238e66bb8b53c296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/2224d530bfa328ab0313f09432fd0af0407c664a",
-                "reference": "2224d530bfa328ab0313f09432fd0af0407c664a",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/48fcf3dc483c14fb1dea62b5238e66bb8b53c296",
+                "reference": "48fcf3dc483c14fb1dea62b5238e66bb8b53c296",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2016-04-15 14:57:47"
+            "time": "2016-04-19 08:29:53"
         },
         {
             "name": "filp/whoops",
@@ -2098,11 +2098,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "creios/creiwork-framework": 20
     },
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []

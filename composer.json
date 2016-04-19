@@ -2,8 +2,6 @@
   "name": "creios/creiwork",
   "description": "A PHP Framework build upon awesome packages",
   "license": "MIT",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "authors": [
     {
       "name": "Tim Tegeler",

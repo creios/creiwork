@@ -22,7 +22,7 @@ bower install
 
 ## Start
 
-Creiwork is build to work with docker.
+Creiwork is built to work with docker.
 
 ```sh
 docker-compose up

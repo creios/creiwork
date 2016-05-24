@@ -13,7 +13,7 @@
     "codegyre/robo": "^0.7.1"
   },
   "require": {
-    "creios/creiwork-framework": "dev-master"
+    "creios/creiwork-framework": "~1.0.0"
   },
   "autoload": {
     "psr-4": {

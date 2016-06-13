@@ -4,6 +4,7 @@ use Creios\Creiwork\Framework\ResponseBuilder;
 use DI\ContainerBuilder;
 use TimTegeler\Routerunner\Routerunner;
 use Whoops\Handler\PrettyPageHandler;
+use function Creios\Creiwork\Framework\out;
 
 date_default_timezone_set('UTC');
 session_start();

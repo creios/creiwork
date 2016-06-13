@@ -7,6 +7,8 @@ use Creios\Creiwork\Framework\Result\DownloadableResultInterface;
 use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
 use Creios\Creiwork\Framework\Result\TemplateResult;
+use Creios\Creiwork\Framework\Result\Util\DisposableResultInterface;
+use Creios\Creiwork\Framework\Result\Util\Disposition;
 
 /**
  * Class Controller
@@ -32,11 +34,12 @@ class Controller extends BaseController
     }
 
     /**
-     * @return DownloadableResultInterface
+     * @return DisposableResultInterface
      */
     public function jsonDownload()
     {
-        return (new JsonResult(['index', 'title']))->asDownload('test.json');
+        $disposition = (new Disposition(Disposition::ATTACHMENT))->withFilename('test.json');
+        return (new JsonResult(['index', 'title']))->withDisposition($disposition);
     }
 
     /**

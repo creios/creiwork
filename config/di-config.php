@@ -23,7 +23,7 @@ return [
         return $logger;
     },
 
-    \Monolog\Handler\StreamHandler::class => object()->constructor(__DIR__.'/../log/test.log', \Monolog\Logger::INFO),
+    \Monolog\Handler\StreamHandler::class => object()->constructor(__DIR__.'/../log/test.log', \Monolog\Logger::DEBUG),
 
     ServerRequestInterface::class => factory([ServerRequest::class, 'fromGlobals']),
 

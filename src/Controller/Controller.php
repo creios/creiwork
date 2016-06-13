@@ -22,7 +22,7 @@ class Controller extends BaseController
      */
     public function index()
     {
-        return new TemplateResult('index', []);
+        return new TemplateResult('index');
     }
 
     /**

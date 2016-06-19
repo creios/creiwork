@@ -1,5 +1,5 @@
 /.gitattributes     export-ignore
 /.semver            export-ignore
-/README.md          export-ignore
+/README.MD          export-ignore
 /LICENSE            export-ignore
-/Image              export-ignore
+/image              export-ignore

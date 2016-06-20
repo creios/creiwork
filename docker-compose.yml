@@ -1,5 +1,5 @@
 apache:
-  build: .
+  image: creios/creiwork
   links:
     - mysql
   dns:
@@ -8,7 +8,7 @@ apache:
   ports:
     - "80:80"
   volumes:
-    - .:/var/www/html
+    - .:/var/www
 mysql:
   image: mysql:5.7
   ports:

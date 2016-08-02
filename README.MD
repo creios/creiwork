@@ -20,6 +20,27 @@ Creiwork uses bower to install client-side dependencies.
 bower install
 ```
 
+## Usage
+
+Creiwork is based on the Model-View-Controller architectural pattern. But one of the major goals of creiwork is to decouple these three layers.
+
+### Results
+
+Results should be yield by a controller. They represent an abstract response.
+
+- TemplateResult
+- FileResult
+- RedirectResult
+- JsonResult
+- JsonRawResult
+- HtmlRawResult
+- XmlRawResult
+- PlainTextResult
+- StreamResult
+- StringBufferResult
+
+
+
 ## Start
 
 Creiwork is built to work with docker.

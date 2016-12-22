@@ -3,6 +3,7 @@
 namespace Creios\Creiwork\Controller;
 
 use Creios\Creiwork\Framework\BaseController;
+use Creios\Creiwork\Framework\Result\ApacheFileResult;
 use Creios\Creiwork\Framework\Result\Interfaces\DisposableResultInterface;
 use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
@@ -39,6 +40,14 @@ class Controller extends BaseController
     {
         $disposition = (new Disposition(Disposition::ATTACHMENT))->withFilename('test.json');
         return (new JsonResult(['index', 'title']))->withDisposition($disposition);
+    }
+
+    /**
+     * @return ApacheFileResult
+     */
+    public function license()
+    {
+        return (new ApacheFileResult(__DIR__ . '/../../LICENSE'));
     }
 
     /**

@@ -13,6 +13,7 @@
     <a href="/" class="list-group-item active">Opens this welcome page <code>/</code></a>
     <a href="/json" class="list-group-item">Displays a JSON-String <code>/json</code></a>
     <a href="/json/download" class="list-group-item">Opens a dialog to download a JSON-Document<code>/json/download</code></a>
+    <a href="/license" class="list-group-item">Opens a dialog to download the LICENSE (uses Apache X-Sendfile module)<code>/license</code></a>
     <a href="/redirect" class="list-group-item">Redirects to welcome page <code>/redirect</code></a>
     <a href="/error" class="list-group-item list-group-item-danger">Displays the error page for an artificially thrown exception <code>/error</code></a>
 </div>

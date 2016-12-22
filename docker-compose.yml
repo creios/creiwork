@@ -1,20 +1,41 @@
-apache:
-  image: creios/creiwork
-  links:
-    - mysql
-  dns:
-    - 8.8.8.8
-    - 9.9.9.9
-  ports:
-    - "80:80"
-  volumes:
-    - .:/var/www
-mysql:
-  image: mysql:5.7
-  ports:
-    - "3306:3306"
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: creiwork
-    MYSQL_USER: creiwork
-    MYSQL_PASSWORD: creiwork
+version: '2'
+services:
+  web:
+    image: creios/creiwork
+    ports:
+      - 80
+    volumes:
+      - .:/var/www
+    networks:
+      - front-tier
+      - back-tier
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: creiwork
+      MYSQL_USER: creiwork
+      MYSQL_PASSWORD: creiwork
+    networks:
+      - back-tier
+
+  lb:
+    image: dockercloud/haproxy
+    ports:
+      - 80:80
+    links:
+      - web
+    networks:
+      - front-tier
+      - back-tier
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge

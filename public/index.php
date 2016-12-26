@@ -4,6 +4,7 @@ use Creios\Creiwork\Framework\ResponseBuilder;
 use DI\ContainerBuilder;
 use TimTegeler\Routerunner\Routerunner;
 use Whoops\Handler\PrettyPageHandler;
+use function Creios\Creiwork\Framework\out;
 
 date_default_timezone_set('UTC');
 session_start();
@@ -23,8 +24,6 @@ $whoops->pushHandler($container->get(PrettyPageHandler::class));
 $whoops->register();
 
 $routerunner = $container->get(Routerunner::class);
-$routerunner->parse("../config/routes");
-$routerunner->setPostProcessor($container->get(ResponseBuilder::class));
 /** @var GuzzleHttp\Psr7\Response $response */
 $response = $routerunner->execute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 

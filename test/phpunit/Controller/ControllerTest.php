@@ -2,6 +2,7 @@
 
 namespace Creios\Creiwork\Controller;
 
+use Aura\Session\SegmentInterface;
 use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
 use Creios\Creiwork\Framework\Result\TemplateResult;
@@ -22,16 +23,20 @@ class ControllerTest extends PHPUnit_Framework_TestCase
     private $serverRequestMock;
     /** @var \PHPUnit_Framework_MockObject_MockObject|Logger */
     private $loggerMock;
+    /** @var \PHPUnit_Framework_MockObject_MockObject|SegmentInterface */
+    private $sessionMock;
 
     public function setUp()
     {
         $this->serverRequestMock = $this->getMock(ServerRequestInterface::class);
         $this->loggerMock = $this->getMock(LoggerInterface::class);
-        $this->controller = new Controller($this->serverRequestMock, $this->loggerMock);
+        $this->sessionMock = $this->getMock(SegmentInterface::class);
+        $this->controller = new Controller($this->serverRequestMock, $this->loggerMock, $this->sessionMock);
     }
+
     public function testIndex()
     {
-        $this->assertEquals(new TemplateResult('index', []), $this->controller->index());
+        $this->assertEquals(new TemplateResult('index'), $this->controller->index());
     }
 
     public function testJson()
@@ -41,7 +46,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
 
     public function testRedirect()
     {
-        $this->assertEquals(new RedirectResult('index'), $this->controller->redirect());
+        $this->assertEquals(new RedirectResult('/'), $this->controller->redirect());
     }
 
 }

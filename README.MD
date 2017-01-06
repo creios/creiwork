@@ -35,11 +35,12 @@ Results should be yield by a controller. They represent an abstract response.
 - JsonRawResult
 - HtmlRawResult
 - XmlRawResult
+- CsvResult
 - PlainTextResult
 - StreamResult
 - StringBufferResult
-
-
+- ApacheFileResult
+- NginxFileResult
 
 ## Start
 

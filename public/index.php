@@ -1,7 +1,7 @@
 <?php
 
-use Creios\Creiwork\Framework\ResponseBuilder;
 use DI\ContainerBuilder;
+use Noodlehaus\Config;
 use TimTegeler\Routerunner\Routerunner;
 use Whoops\Handler\PrettyPageHandler;
 use function Creios\Creiwork\Framework\out;
@@ -16,12 +16,13 @@ $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions('../config/di-config.php');
 $container = $containerBuilder->build();
 
-$whoops = $container->get(\Whoops\Run::class);
-//Development
-$whoops->pushHandler($container->get(PrettyPageHandler::class));
-//Production
-//$whoops->pushHandler($container->get(\Creios\Creiwork\Framework\ErrorPageHandler::class));
-$whoops->register();
+$config = $container->get(Config::class);
+
+if($config->get('debug')){
+    $whoops = $container->get(\Whoops\Run::class);
+    $whoops->pushHandler($container->get(PrettyPageHandler::class));
+    $whoops->register();
+}
 
 $routerunner = $container->get(Routerunner::class);
 /** @var GuzzleHttp\Psr7\Response $response */

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b8640e2215bb0a6368cc1ba853e47794",
-    "content-hash": "cb65d1c13e45aaabf8d77e48047371b0",
+    "hash": "69b8c88bc281a96e9d900bfa23f70d6c",
+    "content-hash": "33dbbab150623aadc42040f7b6300f54",
     "packages": [
         {
             "name": "aura/session",
@@ -98,22 +98,23 @@
         },
         {
             "name": "creios/creiwork-framework",
-            "version": "2.0.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "70cb6f90b953c7e349782897c8be73d0f0d61c8a"
+                "reference": "5a1630ea864382857940878488e73433ed1d9752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/70cb6f90b953c7e349782897c8be73d0f0d61c8a",
-                "reference": "70cb6f90b953c7e349782897c8be73d0f0d61c8a",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/5a1630ea864382857940878488e73433ed1d9752",
+                "reference": "5a1630ea864382857940878488e73433ed1d9752",
                 "shasum": ""
             },
             "require": {
                 "aura/session": "^2.0.0",
                 "filp/whoops": "2.1.0",
                 "guzzlehttp/psr7": "^1.3.0",
+                "hassankhan/config": "^0.10.0",
                 "league/plates": "^3.1",
                 "monolog/monolog": "^1.18",
                 "php": ">=5.5.0",
@@ -143,7 +144,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2016-12-26 11:48:55"
+            "time": "2017-01-08 18:54:28"
         },
         {
             "name": "filp/whoops",
@@ -264,21 +265,81 @@
             "time": "2016-06-24 23:00:38"
         },
         {
-            "name": "league/plates",
-            "version": "3.1.1",
+            "name": "hassankhan/config",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/plates.git",
-                "reference": "2d8569e9f140a70d6a05db38006926f7547cb802"
+                "url": "https://github.com/hassankhan/config.git",
+                "reference": "06ac500348af033f1a2e44dc357ca86282626d4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/plates/zipball/2d8569e9f140a70d6a05db38006926f7547cb802",
-                "reference": "2d8569e9f140a70d6a05db38006926f7547cb802",
+                "url": "https://api.github.com/repos/hassankhan/config/zipball/06ac500348af033f1a2e44dc357ca86282626d4a",
+                "reference": "06ac500348af033f1a2e44dc357ca86282626d4a",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "require-dev": {
-                "mikey179/vfsstream": "~1.4.0",
+                "phpunit/phpunit": "~4.0",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.2"
+            },
+            "suggest": {
+                "symfony/yaml": "~2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Noodlehaus\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hassan Khan",
+                    "homepage": "http://hassankhan.me/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Lightweight configuration file loader that supports PHP, INI, XML, JSON, and YAML files",
+            "homepage": "http://hassankhan.me/config/",
+            "keywords": [
+                "config",
+                "configuration",
+                "ini",
+                "json",
+                "microphp",
+                "unframework",
+                "xml",
+                "yaml",
+                "yml"
+            ],
+            "time": "2016-02-11 16:21:17"
+        },
+        {
+            "name": "league/plates",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/plates.git",
+                "reference": "b1684b6f127714497a0ef927ce42c0b44b45a8af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/plates/zipball/b1684b6f127714497a0ef927ce42c0b44b45a8af",
+                "reference": "b1684b6f127714497a0ef927ce42c0b44b45a8af",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.4",
                 "phpunit/phpunit": "~4.0",
                 "squizlabs/php_codesniffer": "~1.5"
             },
@@ -313,7 +374,7 @@
                 "templating",
                 "views"
             ],
-            "time": "2015-07-09 02:14:40"
+            "time": "2016-12-28 00:14:17"
         },
         {
             "name": "monolog/monolog",
@@ -2631,7 +2692,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "creios/creiwork-framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

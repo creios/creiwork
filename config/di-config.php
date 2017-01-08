@@ -9,6 +9,7 @@ use Interop\Container\ContainerInterface;
 use League\Plates;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Noodlehaus\Config;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 use TimTegeler\Routerunner\Routerunner;
@@ -43,6 +44,7 @@ return [
 
     SegmentInterface::class => function (Session $session) {
         return $session->getSegment('Creios\Creiwork');
-    }
+    },
 
+    Config::class => object()->constructor(__DIR__ . '/config.json')
 ];

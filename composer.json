@@ -13,7 +13,7 @@
     "consolidation/robo": "^1.0.0"
   },
   "require": {
-    "creios/creiwork-framework": "^2.0.0"
+    "creios/creiwork-framework": "dev-develop"
   },
   "autoload": {
     "psr-4": {

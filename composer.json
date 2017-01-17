@@ -13,7 +13,8 @@
     "consolidation/robo": "^1.0.0"
   },
   "require": {
-    "creios/creiwork-framework": "dev-develop"
+    "creios/creiwork-framework": "dev-feature/psr15",
+    "timtegeler/routerunner": "dev-feature/psr15"
   },
   "autoload": {
     "psr-4": {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "69b8c88bc281a96e9d900bfa23f70d6c",
-    "content-hash": "33dbbab150623aadc42040f7b6300f54",
+    "hash": "f7a97a977da191423d6f46778dd3e7b6",
+    "content-hash": "45d8ce8171ee2e69080e53851e9a434e",
     "packages": [
         {
             "name": "aura/session",
@@ -98,16 +98,16 @@
         },
         {
             "name": "creios/creiwork-framework",
-            "version": "dev-develop",
+            "version": "dev-feature/psr15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "792147af399d4dfe8df5cb0a4394e57e73f2802c"
+                "reference": "bac6ee60c438b0c744dc567e527e557c82bed4b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/792147af399d4dfe8df5cb0a4394e57e73f2802c",
-                "reference": "792147af399d4dfe8df5cb0a4394e57e73f2802c",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/bac6ee60c438b0c744dc567e527e557c82bed4b5",
+                "reference": "bac6ee60c438b0c744dc567e527e557c82bed4b5",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "league/plates": "^3.1",
                 "monolog/monolog": "^1.18",
                 "php": ">=5.5.0",
-                "timtegeler/routerunner": "^1.0.0",
+                "timtegeler/routerunner": "dev-feature/psr15",
                 "zumba/json-serializer": "^2.1.0"
             },
             "require-dev": {
@@ -141,7 +141,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2017-01-17 19:47:43"
+            "time": "2017-01-17 20:48:51"
         },
         {
             "name": "filp/whoops",
@@ -317,6 +317,58 @@
                 "yml"
             ],
             "time": "2016-02-11 16:21:17"
+        },
+        {
+            "name": "http-interop/http-middleware",
+            "version": "0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/http-interop/http-middleware.git",
+                "reference": "9a801fe60e70d5d608b61d56b2dcde29516c81b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/9a801fe60e70d5d608b61d56b2dcde29516c81b9",
+                "reference": "9a801fe60e70d5d608b61d56b2dcde29516c81b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Http\\ServerMiddleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side middleware",
+            "keywords": [
+                "factory",
+                "http",
+                "middleware",
+                "psr",
+                "psr-17",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2017-01-14 15:23:42"
         },
         {
             "name": "league/plates",
@@ -816,19 +868,21 @@
         },
         {
             "name": "timtegeler/routerunner",
-            "version": "v1.0.0",
+            "version": "dev-feature/psr15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timtegeler/routerunner.git",
-                "reference": "d46bd0373a528b8d35f4ec6d0a7de0dfb6d801b9"
+                "reference": "589c6ae576bce00d6059e5d452dda1cdc668df4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/d46bd0373a528b8d35f4ec6d0a7de0dfb6d801b9",
-                "reference": "d46bd0373a528b8d35f4ec6d0a7de0dfb6d801b9",
+                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/589c6ae576bce00d6059e5d452dda1cdc668df4e",
+                "reference": "589c6ae576bce00d6059e5d452dda1cdc668df4e",
                 "shasum": ""
             },
             "require": {
+                "guzzlehttp/psr7": "^1.3",
+                "http-interop/http-middleware": "^0.4.1",
                 "php": ">=5.5.9",
                 "php-di/php-di": "^5.2",
                 "phpfastcache/phpfastcache": "^4.3",
@@ -854,7 +908,7 @@
                 }
             ],
             "description": "Routerunner is a router for HTTP-request written in PHP",
-            "time": "2016-06-22 14:49:14"
+            "time": "2017-01-17 20:36:06"
         },
         {
             "name": "zumba/json-serializer",
@@ -2646,7 +2700,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "creios/creiwork-framework": 20
+        "creios/creiwork-framework": 20,
+        "timtegeler/routerunner": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

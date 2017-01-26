@@ -14,6 +14,7 @@
   },
   "require": {
     "creios/creiwork-framework": "dev-feature/psr15",
+    "mindplay/middleman": "3.0.0.x-dev#ff114e34f0b6620f095fe022857813c79486bfc0",
     "timtegeler/routerunner": "dev-feature/psr15"
   },
   "autoload": {

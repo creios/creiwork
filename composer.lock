@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f7a97a977da191423d6f46778dd3e7b6",
-    "content-hash": "45d8ce8171ee2e69080e53851e9a434e",
+    "hash": "e13029d62e60943a3ed6c2d15719af8e",
+    "content-hash": "077f52cd89e20a4d2a1d450647a14bd3",
     "packages": [
         {
             "name": "aura/session",
@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "bac6ee60c438b0c744dc567e527e557c82bed4b5"
+                "reference": "d8c3e10a14bf6e1dca2ec4f0153a39b11cdc51bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/bac6ee60c438b0c744dc567e527e557c82bed4b5",
-                "reference": "bac6ee60c438b0c744dc567e527e557c82bed4b5",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/d8c3e10a14bf6e1dca2ec4f0153a39b11cdc51bb",
+                "reference": "d8c3e10a14bf6e1dca2ec4f0153a39b11cdc51bb",
                 "shasum": ""
             },
             "require": {
@@ -116,6 +116,7 @@
                 "guzzlehttp/psr7": "^1.3.0",
                 "hassankhan/config": "^0.10.0",
                 "league/plates": "^3.1",
+                "mindplay/middleman": "3.0.0.x-dev#ff114e34f0b6620f095fe022857813c79486bfc0",
                 "monolog/monolog": "^1.18",
                 "php": ">=5.5.0",
                 "timtegeler/routerunner": "dev-feature/psr15",
@@ -141,7 +142,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2017-01-17 20:48:51"
+            "time": "2017-01-26 12:11:37"
         },
         {
             "name": "filp/whoops",
@@ -426,6 +427,85 @@
             "time": "2016-12-28 00:14:17"
         },
         {
+            "name": "mindplay/middleman",
+            "version": "3.0.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/middleman.git",
+                "reference": "ff114e34f0b6620f095fe022857813c79486bfc0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/middleman/zipball/ff114e34f0b6620f095fe022857813c79486bfc0",
+                "reference": "ff114e34f0b6620f095fe022857813c79486bfc0",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "^1.1",
+                "http-interop/http-middleware": "^0.4",
+                "mindplay/readable": "^1",
+                "php": ">=5.4",
+                "psr/http-message": "~1.0"
+            },
+            "require-dev": {
+                "mindplay/testies": "^0.2.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/php-code-coverage": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mindplay\\middleman\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Schultz",
+                    "email": "rasmus@mindplay.dk"
+                }
+            ],
+            "description": "PSR-7 middleware dispatcher. Let's stop trying to make this complicated.",
+            "time": "2017-01-26 08:48:00"
+        },
+        {
+            "name": "mindplay/readable",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/readable.git",
+                "reference": "9fcd950d0e1c35fe7f58346b5b596e96d27a5c78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/9fcd950d0e1c35fe7f58346b5b596e96d27a5c78",
+                "reference": "9fcd950d0e1c35fe7f58346b5b596e96d27a5c78",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "mindplay/testies": "dev-master",
+                "phpunit/php-code-coverage": ">=2, <4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Formats PHP values as human-readable strings",
+            "time": "2017-01-09 12:43:52"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.22.0",
             "source": {
@@ -645,16 +725,16 @@
         },
         {
             "name": "phpfastcache/phpfastcache",
-            "version": "4.3.17",
+            "version": "4.3.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPSocialNetwork/phpfastcache.git",
-                "reference": "348f765dbb426f5da1d009802ab496909e4ad691"
+                "reference": "82a84adff6e8fc9b564c616d0fdc9238ae2e86c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/348f765dbb426f5da1d009802ab496909e4ad691",
-                "reference": "348f765dbb426f5da1d009802ab496909e4ad691",
+                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/82a84adff6e8fc9b564c616d0fdc9238ae2e86c3",
+                "reference": "82a84adff6e8fc9b564c616d0fdc9238ae2e86c3",
                 "shasum": ""
             },
             "require": {
@@ -712,7 +792,7 @@
                 "redis",
                 "wincache"
             ],
-            "time": "2016-05-17 22:29:47"
+            "time": "2017-01-24 00:38:01"
         },
         {
             "name": "psr/http-message",
@@ -872,12 +952,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/timtegeler/routerunner.git",
-                "reference": "589c6ae576bce00d6059e5d452dda1cdc668df4e"
+                "reference": "c4df4a87bed6ae961b4f11e1556e5f173e858505"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/589c6ae576bce00d6059e5d452dda1cdc668df4e",
-                "reference": "589c6ae576bce00d6059e5d452dda1cdc668df4e",
+                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/c4df4a87bed6ae961b4f11e1556e5f173e858505",
+                "reference": "c4df4a87bed6ae961b4f11e1556e5f173e858505",
                 "shasum": ""
             },
             "require": {
@@ -894,7 +974,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "TimTegeler\\Routerunner\\": "lib"
+                    "TimTegeler\\Routerunner\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -908,7 +988,7 @@
                 }
             ],
             "description": "Routerunner is a router for HTTP-request written in PHP",
-            "time": "2017-01-17 20:36:06"
+            "time": "2017-01-26 09:34:22"
         },
         {
             "name": "zumba/json-serializer",
@@ -967,16 +1047,16 @@
     "packages-dev": [
         {
             "name": "consolidation/annotated-command",
-            "version": "2.2.2",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9"
+                "reference": "46ad263b21517a2aafe21d4651e06c553b8309a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1f1d92807f72901e049e9df048b412c3bc3652c9",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/46ad263b21517a2aafe21d4651e06c553b8309a7",
+                "reference": "46ad263b21517a2aafe21d4651e06c553b8309a7",
                 "shasum": ""
             },
             "require": {
@@ -1015,7 +1095,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2016-12-16 01:23:33"
+            "time": "2017-01-21 06:15:21"
         },
         {
             "name": "consolidation/log",
@@ -1066,16 +1146,16 @@
         },
         {
             "name": "consolidation/output-formatters",
-            "version": "3.1.6",
+            "version": "3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/output-formatters.git",
-                "reference": "c8ea5734985cea4acd6343a2465a2f71cf011c82"
+                "reference": "da39a0f14d5aaaee06732bb7cef2aea1de056b40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/c8ea5734985cea4acd6343a2465a2f71cf011c82",
-                "reference": "c8ea5734985cea4acd6343a2465a2f71cf011c82",
+                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/da39a0f14d5aaaee06732bb7cef2aea1de056b40",
+                "reference": "da39a0f14d5aaaee06732bb7cef2aea1de056b40",
                 "shasum": ""
             },
             "require": {
@@ -1111,7 +1191,7 @@
                 }
             ],
             "description": "Format text by applying transformations provided by plug-in formatters.",
-            "time": "2017-01-08 20:32:20"
+            "time": "2017-01-21 06:26:40"
         },
         {
             "name": "consolidation/robo",
@@ -1762,16 +1842,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.31",
+            "version": "4.8.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "98b2b39a520766bec663ff5b7ff1b729db9dbfe3"
+                "reference": "6381a99bd2a398d2994b454ad6d57c73f5a7de3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/98b2b39a520766bec663ff5b7ff1b729db9dbfe3",
-                "reference": "98b2b39a520766bec663ff5b7ff1b729db9dbfe3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6381a99bd2a398d2994b454ad6d57c73f5a7de3d",
+                "reference": "6381a99bd2a398d2994b454ad6d57c73f5a7de3d",
                 "shasum": ""
             },
             "require": {
@@ -1830,7 +1910,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-09 02:45:31"
+            "time": "2017-01-25 19:17:47"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2701,6 +2781,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "creios/creiwork-framework": 20,
+        "mindplay/middleman": 20,
         "timtegeler/routerunner": 20
     },
     "prefer-stable": false,

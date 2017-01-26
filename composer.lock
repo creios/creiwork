@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e13029d62e60943a3ed6c2d15719af8e",
-    "content-hash": "077f52cd89e20a4d2a1d450647a14bd3",
+    "hash": "2a9a674b7d4fea752645dd29028e37d8",
+    "content-hash": "d6039ceb9afc4612dc737fd4883bcb86",
     "packages": [
         {
             "name": "aura/session",
@@ -98,16 +98,16 @@
         },
         {
             "name": "creios/creiwork-framework",
-            "version": "dev-feature/psr15",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "2914b0184f9fdf917340c682e66da35957cc51f8"
+                "reference": "b22a6c4a8f07e5d50546aba8c89dc60c2f0bca2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/2914b0184f9fdf917340c682e66da35957cc51f8",
-                "reference": "2914b0184f9fdf917340c682e66da35957cc51f8",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/b22a6c4a8f07e5d50546aba8c89dc60c2f0bca2d",
+                "reference": "b22a6c4a8f07e5d50546aba8c89dc60c2f0bca2d",
                 "shasum": ""
             },
             "require": {
@@ -119,7 +119,7 @@
                 "mindplay/middleman": "3.0.0.x-dev#ff114e34f0b6620f095fe022857813c79486bfc0",
                 "monolog/monolog": "^1.18",
                 "php": ">=5.5.0",
-                "timtegeler/routerunner": "dev-feature/psr15",
+                "timtegeler/routerunner": "dev-develop",
                 "zumba/json-serializer": "^2.1.0"
             },
             "require-dev": {
@@ -142,7 +142,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2017-01-26 12:44:47"
+            "time": "2017-01-26 14:08:06"
         },
         {
             "name": "filp/whoops",
@@ -948,16 +948,16 @@
         },
         {
             "name": "timtegeler/routerunner",
-            "version": "dev-feature/psr15",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timtegeler/routerunner.git",
-                "reference": "c4df4a87bed6ae961b4f11e1556e5f173e858505"
+                "reference": "2915b693a468af240aa296cd511358d8b5e30866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/c4df4a87bed6ae961b4f11e1556e5f173e858505",
-                "reference": "c4df4a87bed6ae961b4f11e1556e5f173e858505",
+                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/2915b693a468af240aa296cd511358d8b5e30866",
+                "reference": "2915b693a468af240aa296cd511358d8b5e30866",
                 "shasum": ""
             },
             "require": {
@@ -988,7 +988,7 @@
                 }
             ],
             "description": "Routerunner is a router for HTTP-request written in PHP",
-            "time": "2017-01-26 09:34:22"
+            "time": "2017-01-26 13:59:50"
         },
         {
             "name": "zumba/json-serializer",

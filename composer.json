@@ -1,24 +1,28 @@
 {
-  "name": "creios/creiwork",
-  "description": "A PHP Framework build upon awesome packages",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Tim Tegeler",
-      "email": "tegeler@creios.net"
+    "config": {
+        "platform": {
+            "php": "7.2"
+        }
+    },
+    "name": "creios/creiwork",
+    "description": "A PHP Framework build upon awesome packages",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Tegeler",
+            "email": "tegeler@creios.net"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^7.2.4",
+        "consolidation/robo": "^1.3.0"
+    },
+    "require": {
+        "creios/creiwork-framework": "^3.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Creios\\Creiwork\\": "src"
+        }
     }
-  ],
-  "require-dev": {
-    "phpunit/phpunit": "^4.8",
-    "consolidation/robo": "^1.0.0"
-  },
-  "require": {
-    "creios/creiwork-framework": "dev-develop"
-  },
-  "autoload": {
-    "psr-4": {
-      "Creios\\Creiwork\\": "src"
-    }
-  }
-
 }

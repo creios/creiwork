@@ -2,11 +2,11 @@
 
 namespace Creios\Creiwork\Controller;
 
-use Creios\Creiwork\Framework\BaseController;
+use Creios\Creiwork\Framework\Controller\BaseController;
 use Creios\Creiwork\Framework\Result\ApacheFileResult;
 use Creios\Creiwork\Framework\Result\Interfaces\DisposableResultInterface;
-use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
+use Creios\Creiwork\Framework\Result\StringResult;
 use Creios\Creiwork\Framework\Result\TemplateResult;
 use Creios\Creiwork\Framework\Result\Util\Disposition;
 
@@ -26,11 +26,11 @@ class Controller extends BaseController
     }
 
     /**
-     * @return JsonResult
+     * @return StringResult
      */
     public function json()
     {
-        return (new JsonResult(['index', 'title']));
+        return StringResult::createJsonResult(json_encode(['index', 'title']));
     }
 
     /**
@@ -39,7 +39,8 @@ class Controller extends BaseController
     public function jsonDownload()
     {
         $disposition = (new Disposition(Disposition::ATTACHMENT))->withFilename('test.json');
-        return (new JsonResult(['index', 'title']))->withDisposition($disposition);
+        return StringResult::createJsonResult(json_encode(['index', 'title']))
+            ->withDisposition($disposition);
     }
 
     /**
@@ -47,7 +48,7 @@ class Controller extends BaseController
      */
     public function license()
     {
-        return (new ApacheFileResult(__DIR__ . '/../../LICENSE'));
+        return new ApacheFileResult(__DIR__ . '/../../LICENSE');
     }
 
     /**

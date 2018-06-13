@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50e2e6b073571c9a56c5d8746d40fb0f",
+    "content-hash": "a4606a639f66281cf640a31dec2ee776",
     "packages": [
         {
             "name": "aura/session",
@@ -101,16 +101,16 @@
         },
         {
             "name": "creios/creiwork-framework",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "18fad752d2b510d7a97380c7086396fa98bca6c4"
+                "reference": "c7ec8b78094dab4621f835e2f3515d235e9d249f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/18fad752d2b510d7a97380c7086396fa98bca6c4",
-                "reference": "18fad752d2b510d7a97380c7086396fa98bca6c4",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/c7ec8b78094dab4621f835e2f3515d235e9d249f",
+                "reference": "c7ec8b78094dab4621f835e2f3515d235e9d249f",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2018-06-13T14:07:07+00:00"
+            "time": "2018-06-13T14:19:36+00:00"
         },
         {
             "name": "doctrine/annotations",

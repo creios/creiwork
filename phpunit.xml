@@ -5,7 +5,10 @@
     </php>
     <filter>
         <whitelist>
-            <directory suffix=".php">App</directory>
+            <directory suffix=".php">src</directory>
+            <exclude>
+                <directory suffix=".php">vendor</directory>
+            </exclude>
         </whitelist>
     </filter>
     <testsuites>

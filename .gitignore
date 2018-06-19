@@ -1,5 +1,5 @@
 /.idea
 /vendor
-/public/bower_components
+/public/assets/node_modules
 /log/*
 !/log/.gitkeep

@@ -1,0 +1,8 @@
+.gitattributes
+.gitignore
+.gitlab-ci.yml
+.gitlab-ci.yml.example
+.gitlab-ci-rsync-exclude
+docker-compose.yml
+LICENSE
+README.MD

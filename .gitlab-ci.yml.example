@@ -1,0 +1,32 @@
+stages:
+  - test
+  - deploy
+
+test-creiwork:
+  image: creios/creiwork:v3-dev
+  stage: test
+  script:
+  - composer install --no-interaction --no-progress
+  - php vendor/bin/phpunit --coverage-text --colors=never
+  cache:
+    paths:
+    - vendor/
+
+deploy-creiwork:
+  image: creios/creiwork:v3-dev
+  stage: deploy
+  only:
+  - master
+  script:
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_KEY")
+  - composer install --no-interaction --no-progress
+  - yarn install
+  - rsync -e "ssh -p 22" -av --delete --exclude-from '.gitlab-ci-rsync-exclude' ./ user@host.com:/var/www/
+  cache:
+    paths:
+    - vendor/
+  environment:
+    name: dev

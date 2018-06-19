@@ -18,7 +18,8 @@
         "consolidation/robo": "^1.3.0"
     },
     "require": {
-        "creios/creiwork-framework": "^3.0.1"
+        "creios/creiwork-framework": "^3.0.1",
+        "middlewares/trailing-slash": "^1.0"
     },
     "autoload": {
         "psr-4": {

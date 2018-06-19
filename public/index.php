@@ -1,6 +1,7 @@
 <?php
 
 use Creios\Creiwork\Framework\Creiwork;
+use Middlewares\TrailingSlash;
 
 // let composer load everything
 require_once "../vendor/autoload.php";
@@ -9,4 +10,6 @@ require_once "../vendor/autoload.php";
 $config = __DIR__ . '/../config';
 
 // create a new Creiwork instance and start execution
-(new Creiwork($config))->start();
+(new Creiwork($config))
+    ->pushMiddleware(TrailingSlash::class)
+    ->start();

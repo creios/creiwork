@@ -2,12 +2,11 @@ version: '3.5'
 services:
   apache:
     container_name: "creiwork-v3-dev"
-    build: https://github.com/creios/docker-creiwork.git#v3-dev
+    build:
+          context: ./
+          dockerfile: Dockerfile
     links:
       - mysql
-    dns:
-      - 8.8.8.8
-      - 9.9.9.9
     ports:
       - "80:80"
     volumes:

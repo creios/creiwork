@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3b9b8b2383fe39d5fc5574aeecb4a25",
+    "content-hash": "54cf4025fb3900aebd7910d079dcd8fd",
     "packages": [
         {
             "name": "aura/session",
@@ -101,16 +101,16 @@
         },
         {
             "name": "creios/creiwork-framework",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "c7ec8b78094dab4621f835e2f3515d235e9d249f"
+                "reference": "78dcd33d5e760dac0dfedf364d48318eb1d48d25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/c7ec8b78094dab4621f835e2f3515d235e9d249f",
-                "reference": "c7ec8b78094dab4621f835e2f3515d235e9d249f",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/78dcd33d5e760dac0dfedf364d48318eb1d48d25",
+                "reference": "78dcd33d5e760dac0dfedf364d48318eb1d48d25",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +130,7 @@
             },
             "require-dev": {
                 "consolidation/robo": "^1.0.5",
-                "phpunit/phpunit": "^5.7",
+                "phpunit/phpunit": "^7.2.4",
                 "satooshi/php-coveralls": "~1.0"
             },
             "type": "library",
@@ -149,7 +149,7 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2018-06-13T14:19:36+00:00"
+            "time": "2018-06-20T09:05:20+00:00"
         },
         {
             "name": "doctrine/annotations",

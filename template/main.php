@@ -9,11 +9,7 @@
 
     <title><?= $this->e($title) ?></title>
 
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
-    <script src="bower_components/respond/dest/respond.min.js"></script>
-    <![endif]-->
+    <link href="assets/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,8 +18,8 @@
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="assets/node_modules/jquery/dist/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

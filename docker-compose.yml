@@ -1,20 +1,20 @@
-apache:
-  image: creios/creiwork
-  links:
-    - mysql
-  dns:
-    - 8.8.8.8
-    - 9.9.9.9
-  ports:
-    - "80:80"
-  volumes:
-    - .:/var/www
-mysql:
-  image: mysql:5.7
-  ports:
-    - "3306:3306"
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: creiwork
-    MYSQL_USER: creiwork
-    MYSQL_PASSWORD: creiwork
+version: '3.5'
+services:
+  apache:
+    build: .
+    links:
+      - mysql
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: creiwork
+      MYSQL_USER: creiwork
+      MYSQL_PASSWORD: creiwork

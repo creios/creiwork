@@ -3,11 +3,11 @@
 namespace Creios\Creiwork\Controller;
 
 use Aura\Session\SegmentInterface;
-use Creios\Creiwork\Framework\Result\JsonResult;
 use Creios\Creiwork\Framework\Result\RedirectResult;
+use Creios\Creiwork\Framework\Result\StringResult;
 use Creios\Creiwork\Framework\Result\TemplateResult;
 use Monolog\Logger;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 
@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
  * Class ControllerTest
  * @package Creios\Creiwork\Controller
  */
-class ControllerTest extends PHPUnit_Framework_TestCase
+class ControllerTest extends TestCase
 {
     /** @var Controller */
     private $controller;
@@ -28,9 +28,9 @@ class ControllerTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->serverRequestMock = $this->getMock(ServerRequestInterface::class);
-        $this->loggerMock = $this->getMock(LoggerInterface::class);
-        $this->sessionMock = $this->getMock(SegmentInterface::class);
+        $this->serverRequestMock = $this->createMock(ServerRequestInterface::class);
+        $this->loggerMock = $this->createMock(LoggerInterface::class);
+        $this->sessionMock = $this->createMock(SegmentInterface::class);
         $this->controller = new Controller($this->serverRequestMock, $this->loggerMock, $this->sessionMock);
     }
 
@@ -41,7 +41,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
 
     public function testJson()
     {
-        $this->assertEquals(new JsonResult(['index', 'title']), $this->controller->json());
+        $this->assertEquals(StringResult::createJsonResult(json_encode(['index', 'title'])), $this->controller->json());
     }
 
     public function testRedirect()

@@ -1,0 +1,12 @@
+{
+  "name": "creiwork",
+  "version": "1.0.0",
+  "description": "A PHP Framework build upon awesome packages",
+  "main": "index.js",
+  "repository": "git@github.com:creios/creiwork.git",
+  "author": "Tim Tegeler <tim@tegeler.me>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  }
+}

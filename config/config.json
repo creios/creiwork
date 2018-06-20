@@ -1,0 +1,8 @@
+{
+    "debug": false,
+    "router-config": "./routerunner-config.yml",
+    "template-dir": "../template",
+    "logger-dir": "../log",
+    "model-dir": "../resource/Serializer",
+    "support-contact": "Support <support@example.org>"
+}

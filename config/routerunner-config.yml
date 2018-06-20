@@ -1,7 +1,7 @@
 routes:
   - [GET, /,              Controller->index]
   - [GET, /json,          Controller->json]
-  - [GET, /license,       Controller->license]
+  - [GET, /robo-file,     Controller->roboFile]
   - [GET, /json/download, Controller->jsonDownload]
   - [GET, /redirect,      Controller->redirect]
   - [GET, /error,         Controller->error]

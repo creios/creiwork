@@ -9,68 +9,6 @@ class RoboFile extends \Robo\Tasks
 {
 
     public $flyway = '--rm --net host -v %s:/migrations creios/flyway -url=jdbc:mysql://%s:%s/%s -user=%s -password=%s %s';
-
-    /**
-     * Shows .semver file as a String
-     * @throws \Robo\Exception\TaskException
-     */
-    public function semver()
-    {
-        $this->taskExec('echo ' . $this->taskSemVer()->__toString())
-            ->run();
-    }
-
-    /**
-     * Increments major segment of .semver file
-     * @throws \Robo\Exception\TaskException
-     */
-    public function semverMajor()
-    {
-        $this->taskSemVer()
-            ->increment('major')
-            ->run();
-    }
-
-    /**
-     * Increments minor segment of .semver file
-     * @throws \Robo\Exception\TaskException
-     */
-    public function semverMinor()
-    {
-        $this->taskSemVer()
-            ->increment('minor')
-            ->run();
-    }
-
-    /**
-     * Increments patch segment of .semver file
-     * @throws \Robo\Exception\TaskException
-     */
-    public function semverPatch()
-    {
-        $this->taskSemVer()
-            ->increment('patch')
-            ->run();
-    }
-
-    /**
-     * Creates a new tag equal to the .semver file
-     */
-    public function gitTag()
-    {
-        $semVer = $this->taskSemVer()->__toString();
-        $this->taskExec('git tag -a -m "' . $semVer . '" ' . $semVer)->run();
-    }
-
-    /**
-     * Deletes the tag equal to the .semver file
-     */
-    public function gitTagDelete()
-    {
-        $semVer = $this->taskSemVer()->__toString();
-        $this->taskExec('git tag -d ' . $semVer)->run();
-    }
-
     /**
      * Displays info about database
      * @param array $opts

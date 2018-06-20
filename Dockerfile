@@ -1,0 +1,3 @@
+FROM creios/creiwork:v3-dev
+
+# CUSTOMIZE YOUR DOCKERIMAGE HERE

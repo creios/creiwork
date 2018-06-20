@@ -46,9 +46,9 @@ class Controller extends BaseController
     /**
      * @return ApacheFileResult
      */
-    public function license()
+    public function roboFile()
     {
-        return new ApacheFileResult(__DIR__ . '/../../LICENSE');
+        return new ApacheFileResult(__DIR__ . '/../../RoboFile.php');
     }
 
     /**

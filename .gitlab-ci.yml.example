@@ -7,7 +7,7 @@ test-creiwork:
   stage: test
   script:
   - composer install --no-interaction --no-progress
-  - php vendor/bin/phpunit --coverage-text --colors=never
+  - vendor/bin/phpunit --coverage-text --colors=never
   cache:
     paths:
     - vendor/

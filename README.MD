@@ -14,10 +14,16 @@ Composer Create-Project enables you to create a new project based on creiwork. C
 composer create-project creios/creiwork my-new-project
 ```
 
-Creiwork uses bower to install client-side dependencies.
+Creiwork uses yar to install client-side dependencies.
 
 ```sh
-bower install
+yarn
+```
+
+Creiwork uses the directory ```cache``` to store often uses values. This directory needs permissions to be written by the webserver process. 
+
+```sh
+chown www-data:www-data cache 
 ```
 
 ## Usage

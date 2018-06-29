@@ -7,66 +7,26 @@
  */
 class RoboFile extends \Robo\Tasks
 {
-
-    public $flyway = '--rm --net host -v %s:/migrations creios/flyway -url=jdbc:mysql://%s:%s/%s -user=%s -password=%s %s';
     /**
-     * Displays info about database
-     * @param array $opts
+     * @param array $options
+     * @return void
      */
-    function flywayInfo($opts = ['host' => 'localhost',
-        'port' => '3306',
-        'database' => 'creiwork',
-        'user' => 'creiwork',
-        'password' => 'creiwork'])
-
+    public function migrate(array $options = ['production' => false]): void
     {
-        $this->taskDockerRun(sprintf($this->flyway,
-            __DIR__,
-            $opts['host'],
-            $opts['port'],
-            $opts['database'],
-            $opts['user'],
-            $opts['password'],
-            'info'))->run();
+        $config = $this->readConfig($options['production']);
+        $database = $config->database;
+        $this->taskExec(
+            'flyway ' .
+            "-url=jdbc:mysql://$database->host:$database->port/$database->database " .
+            "-user=$database->user " .
+            "-password=$database->password " .
+            'migrate'
+        )->run();
     }
 
-    /**
-     * Migrates database
-     * @param array $opts
-     */
-    function flywayMigrate($opts = ['host' => 'localhost',
-        'port' => '3306',
-        'database' => 'creiwork',
-        'user' => 'creiwork',
-        'password' => 'creiwork'])
+    private function readConfig(bool $production): object
     {
-        $this->taskDockerRun(sprintf($this->flyway,
-            __DIR__,
-            $opts['host'],
-            $opts['port'],
-            $opts['database'],
-            $opts['user'],
-            $opts['password'],
-            'migrate'))->run();
-    }
-
-    /**
-     * Cleans database for a fresh start
-     * @param array $opts
-     */
-    function flywayClean($opts = ['host' => 'localhost',
-        'port' => '3306',
-        'database' => 'creiwork',
-        'user' => 'creiwork',
-        'password' => 'creiwork'])
-    {
-        $this->taskDockerRun(sprintf($this->flyway,
-            __DIR__,
-            $opts['host'],
-            $opts['port'],
-            $opts['database'],
-            $opts['user'],
-            $opts['password'],
-            'clean'))->run();
+        $filename = $production ? 'config.json' : 'config.docker.json';
+        return json_decode(file_get_contents(__DIR__ . "/config/$filename"));
     }
 }

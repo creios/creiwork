@@ -1,15 +1,16 @@
 {
-  "debug": false,
-  "router-config": "./routerunner-config.yml",
-  "template-dir": "../template",
-  "logger-dir": "../log",
-  "model-dir": "../resource/serializer",
-  "schema-dir": "../resource/schema",
-  "support-contact": "Support <support@example.org>",
-  "database": {
-    "host": "mysql",
-    "database": "creiwork",
-    "user": "root",
-    "password": ""
-  }
+    "debug": false,
+    "router-config": "./routerunner-config.yml",
+    "template-dir": "../template",
+    "logger-dir": "../log",
+    "model-dir": "../resource/serializer",
+    "schema-dir": "../resource/schema",
+    "support-contact": "Support <support@example.org>",
+    "database": {
+        "host": "mysql",
+        "port": 3306,
+        "database": "creiwork",
+        "user": "root",
+        "password": ""
+    }
 }

@@ -12,4 +12,5 @@ $config = __DIR__ . '/../config';
 // create a new Creiwork instance and start execution
 (new Creiwork($config))
     ->pushMiddleware(TrailingSlash::class)
+    ->addDefinitions($config.'/di-definitions.php')
     ->start();

@@ -8,11 +8,14 @@
 class RoboFile extends \Robo\Tasks
 {
     /**
+     * @param string $action
      * @param array $options
      * @return void
      */
-    public function migrate(array $options = ['production' => false]): void
-    {
+    public function flyway(
+        $action = 'migrate',
+        array $options = ['production' => false]
+    ): void {
         $config = $this->readConfig($options['production']);
         $database = $config->database;
         $this->taskExec(
@@ -20,7 +23,7 @@ class RoboFile extends \Robo\Tasks
             "-url=jdbc:mysql://$database->host:$database->port/$database->database " .
             "-user=$database->user " .
             "-password=$database->password " .
-            'migrate'
+            $action
         )->run();
     }
 

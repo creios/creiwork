@@ -3,7 +3,7 @@
     "router-config": "./routerunner-config.yml",
     "template-dir": "../template",
     "logger-dir": "../log",
-    "model-dir": "../resource/serializer",
+    "serializer-model-dir": "../resource/serializer",
     "schema-dir": "../resource/schema",
     "support-contact": "Support <support@example.org>",
     "database": {

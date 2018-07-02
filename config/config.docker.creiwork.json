@@ -12,5 +12,12 @@
         "database": "creiwork",
         "user": "root",
         "password": ""
+    },
+    "smtp": {
+        "host": "mailcatcher",
+        "port": 1025,
+        "user": "",
+        "password": "",
+        "security": ""
     }
 }

@@ -4,6 +4,7 @@ services:
     build: .
     links:
       - mysql
+      - mailcatcher
     ports:
       - "80:80"
       - "443:443"
@@ -16,3 +17,7 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
       MYSQL_DATABASE: creiwork
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"

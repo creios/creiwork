@@ -29,7 +29,7 @@ class RoboFile extends \Robo\Tasks
 
     private function readConfig(bool $production): object
     {
-        $filename = $production ? 'config.json' : 'config.docker.json';
+        $filename = $production ? 'config.creiwork.json' : 'config.docker.creiwork.json';
         return json_decode(file_get_contents(__DIR__ . "/config/$filename"));
     }
 }

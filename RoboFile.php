@@ -1,5 +1,10 @@
 <?php
 
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemInterface;
+use Quarry\Framework\PdoDatabase;
+
 /**
  * This is routerunner's console commands configuration for Robo task runner.
  *
@@ -7,6 +12,9 @@
  */
 class RoboFile extends \Robo\Tasks
 {
+
+    use \Quarry\Robo\Tasks;
+
     /**
      * @param string $action
      * @param array $options
@@ -25,6 +33,41 @@ class RoboFile extends \Robo\Tasks
             "-password=$database->password " .
             $action
         )->run();
+    }
+
+    /**
+     * Extracts the database schema.
+     */
+    public function quarryExtract(): void
+    {
+        $database = $this->readConfig(false)->database;
+        $this->taskQuarryExtract(
+            $this->modelDirectory(),
+            new PdoDatabase(
+                new PDO(
+                    "mysql:dbname=$database->database;host=$database->host;port=$database->port",
+                    $database->user,
+                    $database->password
+                )
+            ),
+            'creiwork'
+        )->run();
+    }
+
+    /**
+     * Creates Models for extracted database schema.
+     */
+    public function quarryGenerate(): void
+    {
+        $this->taskQuarryGenerate(
+            $this->modelDirectory(),
+            'Creios\\Creiwork\\Model'
+        )->run();
+    }
+
+    private function modelDirectory(): FilesystemInterface
+    {
+        return new Filesystem(new Local(__DIR__.'/src/Model'));
     }
 
     private function readConfig(bool $production): object

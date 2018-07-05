@@ -7,7 +7,7 @@
     "schema-dir": "../resource/schema",
     "support-contact": "Support <support@example.org>",
     "database": {
-        "host": "mysql",
+        "host": "mariadb",
         "port": 3306,
         "database": "creiwork",
         "user": "root",

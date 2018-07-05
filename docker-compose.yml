@@ -1,17 +1,30 @@
 version: '3.5'
 services:
-  apache:
+  php:
     build: .
-    links:
-      - mysql
+    networks:
+      - webserver
+      - database
       - mailcatcher
-    ports:
-      - "80:80"
-      - "443:443"
     volumes:
+      - ./docker/php:/usr/local/etc/php-docker
       - .:/var/www
-  mysql:
-    image: mysql:5.7
+  nginx:
+    image: nginx:1.15
+    networks:
+      - webserver
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./public:/var/www/public
+      - ./static:/var/www/static
+      - ./docker/nginx/config:/etc/nginx/conf.d
+      - ./docker/nginx/certs:/etc/ssl
+  mariadb:
+    image: mariadb:10.3
+    networks:
+      - database
     ports:
       - "3306:3306"
     environment:
@@ -19,5 +32,12 @@ services:
       MYSQL_DATABASE: creiwork
   mailcatcher:
     image: schickling/mailcatcher
+    networks:
+      - mailcatcher
     ports:
       - "1080:1080"
+networks:
+  webserver:
+  database:
+  mailcatcher:
+

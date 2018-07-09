@@ -1,0 +1,51 @@
+stages:
+  - build
+  - test
+  - deploy
+
+composer-creiwork:
+  image: composer:1.6
+  stage: build
+  script:
+  - composer install --no-interaction --no-progress
+  artifacts:
+    paths:
+    - vendor/
+    expire_in: 15 mins
+
+yarn-creiwork:
+  image: node:10.6-stretch
+  stage: build
+  script:
+  - yarn
+  artifacts:
+    paths:
+    - public/node_modules/
+    expire_in: 15 mins
+
+test-creiwork:
+  image: creios/creiwork:v4-dev
+  stage: test
+  script:
+  - vendor/bin/phpunit --coverage-text --colors=never
+  cache:
+    paths:
+    - vendor/
+
+#deploy-creiwork:
+#  image: creios/deploy:v1
+#  stage: deploy
+#  only:
+#  - master
+#  pre_script:
+#  - mkdir -p ~/.ssh
+#  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+#  - eval $(ssh-agent -s)
+#  - ssh-add <(echo "$SSH_KEY")
+#  script:
+#  - deployer --host HOSTADDRESS --port HOSTPORT --exclude-from '.gitlab-ci-deployer-exclude' ./ /var/www/
+#  cache:
+#    paths:
+#    - vendor/
+#  environment:
+#    name: test

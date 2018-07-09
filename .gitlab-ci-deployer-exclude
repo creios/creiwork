@@ -1,8 +1,7 @@
 .gitattributes
 .gitignore
 .gitlab-ci.yml
-.gitlab-ci.yml.example
-.gitlab-ci-rsync-exclude
+.gitlab-ci-deployer-exclude
 docker-compose.yml
 LICENSE
 README.MD

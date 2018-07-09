@@ -30,7 +30,7 @@ class RoboFile extends \Robo\Tasks
         $host = $production ? $database->host : '127.0.0.1';
         $this->taskExec(
             'flyway ' .
-            "-url=jdbc:mysql://$host:$database->port/$database->database " .
+            "-url=jdbc:mysql://$host:$database->port/$database->name " .
             "-user=$database->user " .
             "-password=$database->password " .
             $action
@@ -47,7 +47,7 @@ class RoboFile extends \Robo\Tasks
             $this->modelDirectory(),
             new PdoDatabase(
                 new PDO(
-                    "mysql:dbname=$database->database;host=$database->host;port=$database->port",
+                    "mysql:dbname=$database->name;host=$database->host;port=$database->port",
                     $database->user,
                     $database->password
                 )

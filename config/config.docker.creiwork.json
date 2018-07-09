@@ -9,7 +9,7 @@
     "database": {
         "host": "mariadb",
         "port": 3306,
-        "database": "creiwork",
+        "name": "creiwork",
         "user": "root",
         "password": ""
     },

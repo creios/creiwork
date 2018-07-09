@@ -24,11 +24,13 @@ class RoboFile extends \Robo\Tasks
         $action = 'migrate',
         array $options = ['production' => false]
     ): void {
-        $config = $this->readConfig($options['production']);
+        $production = $options['production'];
+        $config = $this->readConfig($production);
         $database = $config->database;
+        $host = $production ? $database->host : '127.0.0.1';
         $this->taskExec(
             'flyway ' .
-            "-url=jdbc:mysql://$database->host:$database->port/$database->database " .
+            "-url=jdbc:mysql://$host:$database->port/$database->database " .
             "-user=$database->user " .
             "-password=$database->password " .
             $action

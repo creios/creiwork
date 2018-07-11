@@ -26,6 +26,20 @@ Creiwork uses the directory ```cache``` to store often uses values. This directo
 chown www-data:www-data cache 
 ```
 
+Creiwork uses flyway for database migrationes. Follow these commands to install flyway under Linux:
+
+Download and untar it to ```/opt```. (Note: you might want to check for a newer version)
+```sh
+https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.1.4/flyway-commandline-5.1.4-linux-x64.tar.gz
+```
+Create symlink to make it accessible from the command line:
+```sh
+sudo ln -s /opt/flyway-5.1.4/flyway /usr/local/bin/flyway
+```
+Make it executable:
+```sh
+sudo chmod +X /usr/local/bin/flyway
+```
 ## Usage
 
 Creiwork is based on the Model-View-Controller architectural pattern. But one of the major goals of creiwork is to decouple these three layers.

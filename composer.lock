@@ -69,89 +69,6 @@
             "time": "2016-10-03T20:28:32+00:00"
         },
         {
-            "name": "celest/celest",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/celest-time/celest.git",
-                "reference": "978e68536b26970f377f4549ebd790beaf676766"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/celest-time/celest/zipball/978e68536b26970f377f4549ebd790beaf676766",
-                "reference": "978e68536b26970f377f4549ebd790beaf676766",
-                "shasum": ""
-            },
-            "require": {
-                "celest/tzdata": "~0.1",
-                "ext-gmp": "*",
-                "ext-intl": "*",
-                "php": ">=5.6",
-                "php-64bit": "*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Celest\\": "src/Celest"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Steffen Hanikel",
-                    "email": "steffen.hanikel@gmail.com"
-                }
-            ],
-            "description": "A port of JSR310 to PHP",
-            "time": "2017-10-23T17:10:33+00:00"
-        },
-        {
-            "name": "celest/tzdata",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/celest-time/tzdata.git",
-                "reference": "0953d323d0bbd9f8274aa158ad20e501452781f4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/celest-time/tzdata/zipball/0953d323d0bbd9f8274aa158ad20e501452781f4",
-                "reference": "0953d323d0bbd9f8274aa158ad20e501452781f4",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Celest\\TzData\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Steffen Hanikel",
-                    "email": "steffen.hanikel@gmail.com"
-                }
-            ],
-            "description": "Timezone data for Celest based on IANA's time zone database.",
-            "time": "2016-10-10T20:59:13+00:00"
-        },
-        {
             "name": "consolidation/annotated-command",
             "version": "2.8.4",
             "source": {
@@ -473,23 +390,67 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "creios/celest",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/creios/celest.git",
+                "reference": "003f63fb6eef01253caa90667fd5be913367d727"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/creios%2Fcelest/repository/archive.zip?sha=003f63fb6eef01253caa90667fd5be913367d727",
+                "reference": "003f63fb6eef01253caa90667fd5be913367d727",
+                "shasum": ""
+            },
+            "require": {
+                "creios/tzdata": "^1.0.0",
+                "ext-gmp": "*",
+                "ext-intl": "*",
+                "php": ">=5.6",
+                "php-64bit": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Celest\\": "src/Celest"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Steffen Hanikel",
+                    "email": "steffen.hanikel@gmail.com"
+                }
+            ],
+            "description": "A port of JSR310 to PHP",
+            "time": "2018-07-06T11:22:52+00:00"
+        },
+        {
             "name": "creios/creiwork-framework",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/creios/creiwork-framework.git",
-                "reference": "a454990df36827043b811250b5c76e7bf8aa13f6"
+                "reference": "12b9805d70600f479a7d4950f6938edf29668826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/a454990df36827043b811250b5c76e7bf8aa13f6",
-                "reference": "a454990df36827043b811250b5c76e7bf8aa13f6",
+                "url": "https://api.github.com/repos/creios/creiwork-framework/zipball/12b9805d70600f479a7d4950f6938edf29668826",
+                "reference": "12b9805d70600f479a7d4950f6938edf29668826",
                 "shasum": ""
             },
             "require": {
                 "aura/session": "^2.0.0",
-                "celest/celest": "dev-master@dev",
-                "celest/tzdata": "dev-master@dev",
+                "creios/celest": "^1.0.0",
                 "creios/quarry": "^1.0",
                 "doctrine/annotations": "^1.6",
                 "doctrine/cache": "^1.7",
@@ -506,7 +467,7 @@
                 "symfony/property-access": "^4.1",
                 "symfony/property-info": "^4.1",
                 "symfony/serializer": "^4.1",
-                "timtegeler/routerunner": "dev-migrate-to-php-di-6.0#7ba7283dd6c761462688bef61bfea6e1a1006aa5@dev"
+                "timtegeler/routerunner": "^5.0.0-beta"
             },
             "require-dev": {
                 "consolidation/robo": "^1.0.5",
@@ -529,26 +490,25 @@
                     "email": "tegeler@creios.net"
                 }
             ],
-            "time": "2018-07-04T14:38:56+00:00"
+            "time": "2018-07-11T09:52:36+00:00"
         },
         {
             "name": "creios/quarry",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/creios/quarry.git",
-                "reference": "e5aff5433a62152547286094a415cde1340d0d95"
+                "reference": "ebc5f2e598d212381cca5a7c7e289a2821a01158"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/creios%2Fquarry/repository/archive.zip?sha=e5aff5433a62152547286094a415cde1340d0d95",
-                "reference": "e5aff5433a62152547286094a415cde1340d0d95",
+                "url": "https://gitlab.com/api/v4/projects/creios%2Fquarry/repository/archive.zip?sha=ebc5f2e598d212381cca5a7c7e289a2821a01158",
+                "reference": "ebc5f2e598d212381cca5a7c7e289a2821a01158",
                 "shasum": ""
             },
             "require": {
-                "celest/celest": "dev-master@dev",
-                "celest/tzdata": "dev-master@dev",
                 "consolidation/robo": "^1.2",
+                "creios/celest": "^1.0.0",
                 "league/flysystem": "^1.0",
                 "lstrojny/functional-php": "^1.7",
                 "opis/json-schema": "^1.0",
@@ -578,7 +538,45 @@
                     "email": "schuermann@creios.net"
                 }
             ],
-            "time": "2018-07-04T13:03:45+00:00"
+            "time": "2018-07-06T11:25:55+00:00"
+        },
+        {
+            "name": "creios/tzdata",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/creios/tzdata.git",
+                "reference": "378cc8e33f584803380250d33a5b351482b07c78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/creios%2Ftzdata/repository/archive.zip?sha=378cc8e33f584803380250d33a5b351482b07c78",
+                "reference": "378cc8e33f584803380250d33a5b351482b07c78",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Celest\\TzData\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Steffen Hanikel",
+                    "email": "steffen.hanikel@gmail.com"
+                }
+            ],
+            "description": "Timezone data for Celest based on IANA's time zone database.",
+            "time": "2018-07-06T11:12:07+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -3409,16 +3407,16 @@
         },
         {
             "name": "timtegeler/routerunner",
-            "version": "dev-migrate-to-php-di-6.0",
+            "version": "v5.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timtegeler/routerunner.git",
-                "reference": "7ba7283dd6c761462688bef61bfea6e1a1006aa5"
+                "reference": "12552e13e3a141a653407de6011afa69439700b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/7ba7283dd6c761462688bef61bfea6e1a1006aa5",
-                "reference": "7ba7283dd6c761462688bef61bfea6e1a1006aa5",
+                "url": "https://api.github.com/repos/timtegeler/routerunner/zipball/12552e13e3a141a653407de6011afa69439700b5",
+                "reference": "12552e13e3a141a653407de6011afa69439700b5",
                 "shasum": ""
             },
             "require": {
@@ -3450,7 +3448,7 @@
                 }
             ],
             "description": "Routerunner is a router for HTTP-request written in PHP",
-            "time": "2018-07-03T11:50:11+00:00"
+            "time": "2018-07-09T09:01:11+00:00"
         },
         {
             "name": "twig/twig",

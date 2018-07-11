@@ -7,7 +7,7 @@ composer-creiwork:
   image: composer:1.6
   stage: build
   script:
-  - composer install --no-interaction --no-progress
+  - composer install --no-interaction --no-progress --ignore-platform-reqs
   artifacts:
     paths:
     - vendor/

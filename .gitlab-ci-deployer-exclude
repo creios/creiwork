@@ -2,6 +2,7 @@
 .gitignore
 .gitlab-ci.yml
 .gitlab-ci-deployer-exclude
+.idea
 docker-compose.yml
 LICENSE
 README.MD

@@ -47,7 +47,7 @@ class RoboFile extends \Robo\Tasks
             $this->modelDirectory(),
             new PdoDatabase(
                 new PDO(
-                    "mysql:dbname=$database->name;host=127.0.0.1;port=$database->port",
+                    "mysql:dbname=$database->name;host=127.0.0.1;port=$database->port;charset=UTF8",
                     $database->user,
                     $database->password
                 )

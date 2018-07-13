@@ -30,7 +30,7 @@ class RoboFile extends \Robo\Tasks
         $host = $production ? $database->host : '127.0.0.1';
         $this->taskExec(
             'flyway ' .
-            "-url=jdbc:mysql://$host:$database->port/$database->name " .
+            "-url=jdbc:mysql://$host:$database->port/$database->database " .
             "-user=$database->user " .
             "-password=$database->password " .
             $action

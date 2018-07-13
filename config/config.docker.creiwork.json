@@ -2,6 +2,7 @@
     "debug": true,
     "router-config": "./routerunner-config.yml",
     "template-dir": "../template",
+    "template-file-extension": "phtml",
     "logger-dir": "../log",
     "serializer-model-dir": "../resource/serializer",
     "schema-dir": "../resource/schema",

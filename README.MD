@@ -64,11 +64,59 @@ Results should be yield by a controller. They represent an abstract response.
 
 ## Start
 
-Creiwork is built to work with docker.
+Creiwork is built to work with [Docker](https://www.docker.com/what-docker) and comes with a preconfigured Docker-Setup
+to get your development up running as fast as possible.
+
+To start Creiwork's Docker containers, just run:
 
 ```sh
 docker-compose up
 ```
+This will start The following services:
+- LEMP Stack
+- PHP 7.2 FPM
+- Nginx - Port: 8080 (HTTP) and 8443 (HTTPS)
+- MariaDB - Port: 3306
+- Dev Tools:
+- Mailcatcher - Port: 1080
+- Profiling and Performance
+- Webgrind - Port: 8081
+- xhgui - Port: 8082
+
+If you want to install custom PHP Extension use the provided `Dockerfile`.
+
+## Debugging and Profiling
+
+The Creiwork's Docker-Setup is configured to enable debugging and profiling out of the box.
+PHP Xdebug as well as Tideways (a modern XHProf fork) are installed inside the PHP Image.
+
+##### Xdebug
+Xdebug can be configured through the `docker/php/creiwork.ini` which holds the configuration for PHP.
+
+To start a debugging session configure your IDE to listen for connections and use a a Browseraddon to inform the webserver
+that debugging/profiling should be enabled.
+
+Xdebug profiling snapshots are stored to the `tmp/xdebug` folder inside the PHP container which is mounted the the folder
+`docker/xdebug/profiling` inside your project's folder on your machine.
+You can simply use your IDE or a third party tool to analyze the snapshots.
+For convenience purpose the Docker-Setup also provides a Webgrind container wich provides a webappication at `127.0.0.1:8081`
+to enable fast analysis of your snapshots.
+
+##### Tideways (XHProf)
+XHProf is a light-weight hierarchical and instrumentation based profiler. During the data collection phase, it keeps track of call counts and inclusive metrics for arcs in the dynamic callgraph of a program. It computes exclusive metrics in the reporting/post processing phase, such as wall (elapsed) time, CPU time and memory usage. A functions profile can be broken down by callers or callees.
+
+To enable XHProf in development context with the provided Docker-Setup just go to `public/index.php` and uncomment the following lines:
+```php
+if (file_exists('/xhgui-service/external/header.php')) {
+require_once '/xhgui-service/external/header.php';
+}
+```
+XHProof should then start collecting metrics of your application. You can conveniently access the collected data through the provided xhgui Docker container.
+Accessible under `127.0.0.1:8082`.
+The configuration can be found in `docker/xhgui/config/config.php`.
+
+XHProf is built to run in production to give you real-world data. If you want to use it in production just change the path
+inside the `index.php`.
 
 ## Awesome Packages
 

@@ -43,7 +43,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: brotdose
+      MYSQL_DATABASE: creiwork
   mailcatcher:
     image: schickling/mailcatcher
     networks:

@@ -11,7 +11,18 @@ services:
       - ./docker/php:/usr/local/etc/php-docker
       - .:/var/www
       - ./docker/xdebug/profiling:/tmp/xdebug
-      - xhgui-source:/xhgui-service
+      - type: bind
+        read_only: true
+        source: ./docker/xhgui/config/config.php
+        target: /xhgui-service/config/config.php
+      - type: bind
+        read_only: true
+        source: ./docker/xhgui/config/config.php
+        target: /xhgui-service/config/config.default.php
+      - type: volume
+        read_only: true
+        source: xhgui-source
+        target: /xhgui-service
   nginx:
     image: nginx:1.15
     networks:
@@ -32,7 +43,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: creiwork
+      MYSQL_DATABASE: brotdose
   mailcatcher:
     image: schickling/mailcatcher
     networks:
@@ -57,12 +68,15 @@ services:
       - type: bind
         read_only: true
         source: ./docker/xhgui/config/config.php
-        target: /usr/local/src/xhgui/config.php
+        target: /usr/local/src/xhgui/config/config.php
       - type: bind
         read_only: true
         source: ./docker/xhgui/config/config.php
-        target: /usr/local/src/xhgui/config.default.php
-      - xhgui-source:/usr/local/src/xhgui
+        target: /usr/local/src/xhgui/config/config.default.php
+      - type: volume
+        read_only: false
+        source: xhgui-source
+        target: /usr/local/src/xhgui
 networks:
   webserver:
   database:
@@ -70,4 +84,3 @@ networks:
   xhgui:
 volumes:
   xhgui-source:
-

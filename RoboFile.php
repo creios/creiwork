@@ -43,11 +43,12 @@ class RoboFile extends \Robo\Tasks
     public function quarryExtract(): void
     {
         $database = $this->readConfig(false)->database;
+        $host = '127.0.0.1';
         $this->taskQuarryExtract(
             $this->modelDirectory(),
             new PdoDatabase(
                 new PDO(
-                    "mysql:dbname=$database->database;host=$database->host;port=$database->port;charset=UTF8",
+                    "mysql:dbname=$database->database;host=$host;port=$database->port;charset=utf8mb4",
                     $database->user,
                     $database->password
                 )

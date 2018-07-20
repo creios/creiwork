@@ -12,7 +12,7 @@
         "port": 3306,
         "database": "creiwork",
         "user": "root",
-        "password": ""
+        "password": "root"
     },
     "smtp": {
         "host": "mailcatcher",

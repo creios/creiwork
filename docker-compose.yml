@@ -76,12 +76,14 @@ services:
     volumes:
       - type: bind
         read_only: true
-        propagation: shared
+        bind:
+	  propagation: shared
         source: ./docker/xhgui/config/config.php
         target: /usr/local/src/xhgui/config/config.php
       - type: bind
         read_only: true
-        propagation: shared
+        bind:
+	  propagation: shared
         source: ./docker/xhgui/config/config.php
         target: /usr/local/src/xhgui/config/config.default.php
       - type: volume
